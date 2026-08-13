@@ -18,39 +18,73 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0A192F]/95 backdrop-blur-md border-b border-[rgba(100,200,255,0.08)] shadow-md">
       {/* 1. TOP LOCATION BANNER */}
-      <div className="bg-[#060F1E] border-b border-[rgba(100,200,255,0.08)] py-1.5 px-4 text-xs font-[var(--font-body)]">
-        <div className="container-custom flex items-center justify-between gap-3 overflow-x-auto no-scrollbar py-0.5">
-          <div className="flex items-center gap-1.5 shrink-0 text-[#F59E0B] font-bold uppercase tracking-wide text-[0.7rem]">
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
+      <div className="bg-[#060F1E] border-b border-[rgba(100,200,255,0.08)] py-2 px-4 text-xs font-[var(--font-body)] overflow-hidden">
+        <div className="container-custom flex items-center gap-4">
+          <div className="flex items-center gap-1.5 shrink-0 text-[#F59E0B] font-bold uppercase tracking-wide text-[0.7rem] bg-[#060F1E] z-10 pr-2">
+            <MapPin className="w-3.5 h-3.5 shrink-0 animate-bounce" />
             <span>Clinic Locations:</span>
           </div>
 
-          <div className="flex items-center gap-3 sm:gap-6 shrink-0">
-            {seedFacilities.map((facility) => {
-              const mapsUrl =
-                facility.google_maps_url ||
-                facility.google_business_url ||
-                `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`;
+          <div className="marquee-container no-scrollbar flex-grow">
+            <div className="marquee-content">
+              {/* List 1 */}
+              <div className="flex items-center gap-12">
+                {seedFacilities.map((facility) => {
+                  const mapsUrl =
+                    facility.google_maps_url ||
+                    facility.google_business_url ||
+                    `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`;
 
-              return (
-                <a
-                  key={facility.slug}
-                  href={mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-white font-bold transition-colors text-[0.75rem] whitespace-nowrap group"
-                  title={`Open ${facility.name} location on Google Maps`}
-                >
-                  <MapPin className="w-3.5 h-3.5 text-[#F59E0B] group-hover:text-[#38BDF8] transition-colors shrink-0" />
-                  <span>{facility.name}</span>
-                  {facility.city && (
-                    <span className="text-[0.65rem] text-slate-500 font-normal hidden lg:inline">
-                      ({facility.city})
-                    </span>
-                  )}
-                </a>
-              );
-            })}
+                  return (
+                    <a
+                      key={`${facility.slug}-1`}
+                      href={mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-slate-300 hover:text-white font-bold transition-colors text-[0.75rem] whitespace-nowrap group"
+                      title={`Open ${facility.name} location on Google Maps`}
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-[#F59E0B] group-hover:text-[#38BDF8] transition-colors shrink-0" />
+                      <span>{facility.name}</span>
+                      {facility.city && (
+                        <span className="text-[0.65rem] text-slate-500 font-normal hidden lg:inline">
+                          ({facility.city})
+                        </span>
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+
+              {/* Duplicate List 2 for seamless infinite scroll */}
+              <div className="flex items-center gap-12">
+                {seedFacilities.map((facility) => {
+                  const mapsUrl =
+                    facility.google_maps_url ||
+                    facility.google_business_url ||
+                    `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`;
+
+                  return (
+                    <a
+                      key={`${facility.slug}-2`}
+                      href={mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-slate-300 hover:text-white font-bold transition-colors text-[0.75rem] whitespace-nowrap group"
+                      title={`Open ${facility.name} location on Google Maps`}
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-[#F59E0B] group-hover:text-[#38BDF8] transition-colors shrink-0" />
+                      <span>{facility.name}</span>
+                      {facility.city && (
+                        <span className="text-[0.65rem] text-slate-500 font-normal hidden lg:inline">
+                          ({facility.city})
+                        </span>
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>
