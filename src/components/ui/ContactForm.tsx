@@ -22,12 +22,12 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
 
   if (submitted) {
     return (
-      <div className="p-8 text-center space-y-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-emerald-900 font-[var(--font-body)]">
+      <div className="p-8 text-center space-y-4 bg-[#064E3B]/40 rounded-2xl border border-emerald-500/40 text-emerald-100 font-[var(--font-body)]">
         <div className="w-12 h-12 rounded-full bg-emerald-600 text-white mx-auto flex items-center justify-center shadow-md">
           <CheckCircle2 className="w-6 h-6" />
         </div>
-        <h3 className="text-xl font-bold font-[var(--font-heading)] text-emerald-950">Thank You!</h3>
-        <p className="text-sm leading-relaxed">
+        <h3 className="text-xl font-bold font-[var(--font-heading)] text-emerald-200">Thank You!</h3>
+        <p className="text-sm leading-relaxed text-emerald-100">
           Your inquiry has been received. Our administration team at Activecare Healthcare Network will get back to you shortly.
         </p>
         <button
@@ -59,7 +59,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             type="tel"
             id="contact-form-phone"
             className="form-input"
-            placeholder="+91 7447447306"
+            placeholder="+91 88389 39754"
             required
           />
         </div>

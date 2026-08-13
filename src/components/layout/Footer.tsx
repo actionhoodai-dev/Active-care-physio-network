@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, Globe, ExternalLink } from 'lucide-react';
+import { seedFacilities } from '@/lib/seed-data';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A192F] text-white" id="footer">
+    <footer className="bg-[#060F1E] text-white border-t border-[rgba(100,200,255,0.08)]" id="footer">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -49,36 +50,50 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Our Clinics with Direct Links */}
+          {/* Our Clinics with Location & Maps Links */}
           <div>
             <h4 className="text-sm font-bold font-[var(--font-heading)] uppercase tracking-wider text-slate-300 mb-4">
-              Our Clinics
+              Our Branch Locations
             </h4>
             <ul className="space-y-4 font-[var(--font-body)]">
-              <li>
-                <Link href="/facility/active-care-physiotherapy-center" className="text-sm text-slate-200 hover:text-amber-400 transition-colors block font-bold">
-                  Activecare Physiotherapy
-                </Link>
-                <a href="https://activecarephysio.in/" target="_blank" rel="noopener noreferrer" className="text-xs text-sky-400 hover:underline flex items-center gap-1 mt-0.5">
-                  <Globe className="w-3 h-3" /> activecarephysio.in
-                </a>
-              </li>
-              <li>
-                <Link href="/facility/dr-pauls-ortho-clinic" className="text-sm text-slate-200 hover:text-amber-400 transition-colors block font-bold">
-                  DR. PAUL&apos;S ORTHO CLINIC
-                </Link>
-                <a href="https://drpaulsorthoclinic.com/" target="_blank" rel="noopener noreferrer" className="text-xs text-sky-400 hover:underline flex items-center gap-1 mt-0.5">
-                  <Globe className="w-3 h-3" /> drpaulsorthoclinic.com
-                </a>
-              </li>
-              <li>
-                <Link href="/facility/arunai-clinic" className="text-sm text-slate-200 hover:text-amber-400 transition-colors block font-bold">
-                  Arunai Clinic
-                </Link>
-                <a href="https://maps.app.goo.gl/adgaBELxiT8XLhxRA" target="_blank" rel="noopener noreferrer" className="text-xs text-amber-400 hover:underline flex items-center gap-1 mt-0.5">
-                  <ExternalLink className="w-3 h-3" /> Google Business Profile
-                </a>
-              </li>
+              {seedFacilities.map((facility) => {
+                const mapsUrl =
+                  facility.google_maps_url ||
+                  facility.google_business_url ||
+                  `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`;
+
+                return (
+                  <li key={facility.slug} className="space-y-1">
+                    <Link
+                      href={`/facility/${facility.slug}`}
+                      className="text-sm text-slate-200 hover:text-amber-400 transition-colors block font-bold"
+                    >
+                      {facility.name}
+                    </Link>
+                    <div className="flex flex-wrap items-center gap-3 text-xs">
+                      <a
+                        href={mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-amber-400 hover:text-amber-300 hover:underline inline-flex items-center gap-1 font-semibold"
+                        title={`Open ${facility.name} on Google Maps`}
+                      >
+                        <MapPin className="w-3.5 h-3.5" /> Google Maps Location
+                      </a>
+                      {facility.website_url && (
+                        <a
+                          href={facility.website_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sky-400 hover:underline inline-flex items-center gap-1"
+                        >
+                          <Globe className="w-3 h-3" /> Website
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -91,8 +106,8 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
                 <div>
-                  <a href="tel:+917092550824" className="text-sm text-slate-200 hover:text-white block font-bold">+91 7092550824</a>
-                  <a href="tel:+917447447306" className="text-sm text-slate-200 hover:text-white block font-bold">+91 7447447306</a>
+                  <a href="tel:+919884308186" className="text-sm text-slate-200 hover:text-white block font-bold">+91 9884308186</a>
+                  <a href="tel:+918838939754" className="text-sm text-slate-200 hover:text-white block font-bold">+91 88389 39754</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -103,8 +118,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-slate-300">
-                  No 1 Thazhambur main road, OMR, OPP to Mount literia ZEE school, Navalur, Chennai 600130
+                <span className="text-sm text-slate-300 leading-snug">
+                  938, MIG 938, 1st Main Rd, near Lakshmi super market, TNHB Colony, Velachery, Chennai, Tamil Nadu 600042
                 </span>
               </li>
               <li className="flex items-start gap-3">

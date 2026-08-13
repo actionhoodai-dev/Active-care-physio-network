@@ -3,6 +3,8 @@ import { Open_Sans, Lora } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import BackToTop from '@/components/ui/BackToTop';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import ScrollAnimations from '@/components/ui/ScrollAnimations';
 import { generateMedicalOrganizationSchema } from '@/lib/schema';
 import './globals.css';
 
@@ -64,11 +66,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased font-sans">
+      <body className="min-h-screen flex flex-col bg-[#0A192F] text-slate-100 antialiased font-sans">
+        <ScrollAnimations />
         <Header />
-        <main className="flex-grow pt-20">{children}</main>
+        <main className="flex-grow pt-24 md:pt-28">{children}</main>
         <Footer />
         <BackToTop />
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -34,18 +34,16 @@ const iconMap: Record<string, React.ReactNode> = {
   'pain-management': <Zap className="w-7 h-7" />,
 };
 
-/* Professional Solid Color Palette */
+/* Rich Dark Accent Icon Colors */
 const colors = [
-  'bg-[#0F2C59]',   /* Deep Navy */
+  'bg-[#0284C7]',   /* Sky Blue */
   'bg-[#D97706]',   /* Amber */
   'bg-[#0D9488]',   /* Teal */
-  'bg-[#0284C7]',   /* Blue */
+  'bg-[#2563EB]',   /* Blue */
   'bg-[#7C3AED]',   /* Violet */
-  'bg-[#DC2626]',   /* Red */
-  'bg-[#1E3A8A]',   /* Royal Blue */
-  'bg-[#B45309]',   /* Dark Amber */
-  'bg-[#0F766E]',   /* Dark Teal */
-  'bg-[#1D4ED8]',   /* Bright Blue */
+  'bg-[#059669]',   /* Emerald */
+  'bg-[#EA580C]',   /* Orange */
+  'bg-[#0891B2]',   /* Cyan */
 ];
 
 export default function ServiceCard({
@@ -59,19 +57,22 @@ export default function ServiceCard({
 
   return (
     <div
-      className="bg-white rounded-2xl border border-slate-200 p-6 card-hover shadow-[var(--shadow-card)] group"
+      className="bg-[#112240] rounded-2xl border border-[rgba(100,200,255,0.08)] p-6 card-hover shadow-lg group flex flex-col justify-between"
       id={`service-card-${slug}`}
+      data-animate="scale"
     >
-      <div className={`w-14 h-14 rounded-xl ${color} flex items-center justify-center text-white shadow-md mb-5 transition-transform group-hover:scale-110`}>
-        {icon}
-      </div>
+      <div>
+        <div className={`w-14 h-14 rounded-xl ${color} flex items-center justify-center text-white shadow-md mb-5 transition-transform group-hover:scale-110`}>
+          {icon}
+        </div>
 
-      <h3 className="text-lg font-bold font-[var(--font-heading)] text-[#0F2C59] mb-2">
-        {name}
-      </h3>
-      <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 font-[var(--font-body)]">
-        {description}
-      </p>
+        <h3 className="text-lg font-bold font-[var(--font-heading)] text-white mb-2">
+          {name}
+        </h3>
+        <p className="text-sm text-slate-300 leading-relaxed line-clamp-3 font-[var(--font-body)]">
+          {description}
+        </p>
+      </div>
     </div>
   );
 }

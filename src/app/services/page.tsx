@@ -12,18 +12,18 @@ export default async function ServicesPage() {
   const services = await getServices();
 
   return (
-    <div className="py-12 md:py-20 bg-[#F8FAFC] min-h-screen">
+    <div className="py-12 md:py-20 bg-[#0A192F] text-slate-100 min-h-screen">
       <div className="container-custom">
-        {/* Solid Banner */}
-        <div className="bg-[#0F2C59] text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl relative overflow-hidden border border-[#1E3A8A]">
+        {/* Dark Banner */}
+        <div className="bg-[#0F2440] text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl relative overflow-hidden border border-[rgba(100,200,255,0.12)]" data-animate="fade">
           <div className="max-w-2xl space-y-4">
-            <span className="badge bg-white text-[#0F2C59] text-xs font-bold uppercase tracking-wider font-[var(--font-body)]">
+            <span className="badge bg-[#0284C7] text-white text-xs font-bold uppercase tracking-wider font-[var(--font-body)]">
               Medical Directory
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-[var(--font-heading)] leading-tight text-white">
               Services &amp; Specialties
             </h1>
-            <p className="text-blue-100 text-base sm:text-lg font-[var(--font-body)]">
+            <p className="text-slate-300 text-base sm:text-lg font-[var(--font-body)]">
               From advanced joint rehabilitation and orthopedic surgery to neurological disease care and diabetes management.
             </p>
           </div>
@@ -43,11 +43,11 @@ export default async function ServicesPage() {
         </div>
 
         {/* Callout Card */}
-        <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="text-2xl font-bold font-[var(--font-heading)] text-[#0F2C59]">
+        <div className="bg-[#112240] rounded-3xl p-8 border border-[rgba(100,200,255,0.12)] shadow-xl text-center max-w-3xl mx-auto space-y-4" data-animate="scale">
+          <h2 className="text-2xl font-bold font-[var(--font-heading)] text-white">
             Looking for a specific clinic offering these services?
           </h2>
-          <p className="text-slate-600 text-sm font-[var(--font-body)]">
+          <p className="text-slate-300 text-sm font-[var(--font-body)]">
             View our network directory to find contact numbers, addresses, and website links for each location.
           </p>
           <div className="pt-2">

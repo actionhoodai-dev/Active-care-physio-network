@@ -12,18 +12,18 @@ export default async function OurNetworkPage() {
   const facilities = await getFacilities();
 
   return (
-    <div className="py-12 md:py-20 bg-[#F8FAFC] min-h-screen">
+    <div className="py-12 md:py-20 bg-[#0A192F] text-slate-100 min-h-screen">
       <div className="container-custom">
-        {/* Solid Banner */}
-        <div className="bg-[#0F2C59] text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl relative overflow-hidden border border-[#1E3A8A]">
+        {/* Dark Banner */}
+        <div className="bg-[#0F2440] text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl relative overflow-hidden border border-[rgba(100,200,255,0.12)]" data-animate="fade">
           <div className="max-w-3xl space-y-4">
-            <span className="badge bg-white text-[#0F2C59] text-xs font-bold uppercase tracking-wider font-[var(--font-body)]">
+            <span className="badge bg-[#0284C7] text-white text-xs font-bold uppercase tracking-wider font-[var(--font-body)]">
               Network Facilities Directory
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-[var(--font-heading)] leading-tight text-white">
               Associated Clinics &amp; Centers
             </h1>
-            <p className="text-blue-100 text-base sm:text-lg font-[var(--font-body)]">
+            <p className="text-slate-300 text-base sm:text-lg font-[var(--font-body)]">
               Explore full profiles for Activecare Physiotherapy &amp; Sports Injury Clinic (Main Hub), DR. PAUL&apos;S ORTHO CLINIC, and Arunai Clinic with complete addresses, contact numbers, maps, and website redirect buttons.
             </p>
           </div>
@@ -31,9 +31,9 @@ export default async function OurNetworkPage() {
 
         {/* Facilities Grid */}
         <div className="space-y-8">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-            <h2 className="text-xl font-bold font-[var(--font-heading)] text-[#0F2C59] flex items-center gap-2">
-              <Building2 className="w-5 h-5 text-[#0284C7]" />
+          <div className="flex items-center justify-between border-b border-[rgba(100,200,255,0.08)] pb-4" data-animate="fade">
+            <h2 className="text-xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
+              <Building2 className="w-5 h-5 text-[#38BDF8]" />
               Activecare Network Clinics ({facilities.length})
             </h2>
           </div>
