@@ -123,13 +123,13 @@ export default function AdminServicesListPage() {
       {/* Search & Info Bar */}
       <div className="bg-[#112240] p-4 rounded-2xl border border-[rgba(100,200,255,0.08)] flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
         <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search treatments by name, keywords, slug..."
-            className="form-input pl-10 text-xs sm:text-sm !py-2.5 w-full min-h-[42px]"
+            className="form-input form-input-with-icon text-xs sm:text-sm !py-2.5 w-full min-h-[42px]"
           />
         </div>
         <div className="text-xs text-slate-400 font-medium text-right sm:text-left self-center sm:self-auto">

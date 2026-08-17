@@ -133,7 +133,7 @@ export default function AdminEditServicePage({ params }: EditPageProps) {
               URL Identifier / Slug *
             </label>
             <div className="relative">
-              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono">
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono pointer-events-none select-none z-10">
                 /
               </span>
               <input
@@ -142,7 +142,7 @@ export default function AdminEditServicePage({ params }: EditPageProps) {
                 required
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
-                className="form-input pl-8 font-mono text-xs sm:text-sm min-h-[44px]"
+                className="form-input form-input-with-prefix font-mono text-xs sm:text-sm min-h-[44px]"
               />
             </div>
             <p className="text-[0.7rem] text-slate-400 mt-1">

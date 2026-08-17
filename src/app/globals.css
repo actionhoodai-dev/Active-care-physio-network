@@ -199,7 +199,16 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9375rem;
   color: #E2E8F0;
   background-color: #0A192F;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-input-with-icon {
+  padding-left: 2.85rem !important;
+}
+
+.form-input-with-prefix {
+  padding-left: 2.25rem !important;
 }
 
 .form-input:focus {

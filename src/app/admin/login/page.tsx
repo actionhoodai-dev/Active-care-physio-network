@@ -91,7 +91,7 @@ export default function AdminLoginPage() {
                 Admin Email Address
               </label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                 <input
                   id="admin-email"
                   type="email"
@@ -99,7 +99,7 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@activecarephysio.in"
-                  className="form-input pl-10"
+                  className="form-input form-input-with-icon"
                 />
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function AdminLoginPage() {
                 Password
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
                 <input
                   id="admin-password"
                   type="password"
@@ -117,7 +117,7 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
-                  className="form-input pl-10"
+                  className="form-input form-input-with-icon"
                 />
               </div>
             </div>
