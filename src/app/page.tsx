@@ -205,15 +205,21 @@ export default async function HomePage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#112240] border border-[rgba(100,200,255,0.1)] flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-[#F59E0B]" />
+                <a
+                  href="https://maps.google.com/?q=Active+Care+Physiotherapy+Center,+Velachery,+Chennai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 group/loc"
+                  title="Open in Google Maps"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#112240] group-hover/loc:bg-[#0284C7]/20 border border-[rgba(100,200,255,0.1)] group-hover/loc:border-[#F59E0B]/40 flex items-center justify-center shrink-0 transition-colors">
+                    <MapPin className="w-5 h-5 text-[#F59E0B] group-hover/loc:scale-110 transition-transform" />
                   </div>
                   <div className="font-[var(--font-body)]">
-                    <p className="text-xs text-slate-400 uppercase tracking-wider font-bold">Main Hub Address</p>
-                    <p className="text-sm font-bold text-white">938, MIG 938, 1st Main Rd, near Lakshmi super market, TamilNadu Housing Board Colony, Periyar Nagar, Velachery, Chennai, Greater Chennai, Tamil Nadu 600042</p>
+                    <p className="text-xs text-slate-400 group-hover/loc:text-[#F59E0B] uppercase tracking-wider font-bold transition-colors">Main Hub Address (Click for Maps)</p>
+                    <p className="text-sm font-bold text-white group-hover/loc:text-[#38BDF8] underline decoration-dotted transition-colors">938, MIG 938, 1st Main Rd, near Lakshmi super market, TamilNadu Housing Board Colony, Periyar Nagar, Velachery, Chennai, Greater Chennai, Tamil Nadu 600042</p>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[#112240] border border-[rgba(100,200,255,0.1)] flex items-center justify-center shrink-0">

@@ -70,13 +70,19 @@ export default function HeroSection() {
                   <p className="text-slate-300">4 PM – 8 PM</p>
                 </div>
               </div>
-              <div className="p-3.5 rounded-xl bg-[#112240] border border-[rgba(100,200,255,0.08)] shadow-sm flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#F59E0B] shrink-0 mt-0.5" />
+              <a
+                href="https://maps.google.com/?q=Active+Care+Physiotherapy+Center,+Velachery,+Chennai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3.5 rounded-xl bg-[#112240] hover:bg-[#1A365D] border border-[rgba(100,200,255,0.08)] hover:border-[#F59E0B]/40 shadow-sm flex items-start gap-3 transition-colors group"
+                title="Open Active Care Physiotherapy Centre on Google Maps"
+              >
+                <MapPin className="w-5 h-5 text-[#F59E0B] group-hover:scale-110 shrink-0 mt-0.5 transition-transform" />
                 <div className="text-xs font-[var(--font-body)]">
-                  <p className="font-bold text-white">Location</p>
-                  <p className="text-slate-300 mt-0.5">Velachery, Chennai</p>
+                  <p className="font-bold text-white group-hover:text-[#F59E0B] transition-colors">Location</p>
+                  <p className="text-slate-300 mt-0.5 underline decoration-dotted">Velachery, Chennai</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -130,7 +136,7 @@ export default function HeroSection() {
                     </div>
                   </div>
                   <h3 className="font-bold text-sm text-white">DR. PAUL&apos;S ORTHO CLINIC</h3>
-                  <p className="text-xs text-slate-300">Orthopedic surgery, fracture care, joint replacement &amp; spine therapy.</p>
+                  <p className="text-xs text-slate-300">Orthopedic surgery, physiotherapy rehab, fracture care, joint &amp; spine therapy.</p>
                   <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#F59E0B]" /> +91 8838939754 / +91 9344674737</p>
                 </div>
 

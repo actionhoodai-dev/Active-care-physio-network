@@ -50,10 +50,16 @@ export default function FacilityCard({ facility }: FacilityCardProps) {
                 {facility.name}
               </h3>
               {facility.city && (
-                <p className="flex items-center gap-1 text-xs text-slate-400 mt-1 font-[var(--font-body)]">
-                  <MapPin className="w-3.5 h-3.5 text-[#38BDF8]" />
-                  {facility.city}, {facility.state}
-                </p>
+                <a
+                  href={facility.google_maps_url || facility.google_business_url || `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-[#38BDF8] mt-1 font-[var(--font-body)] transition-colors group/loc"
+                  title={`Open ${facility.name} on Google Maps`}
+                >
+                  <MapPin className="w-3.5 h-3.5 text-[#38BDF8] group-hover/loc:scale-110 transition-transform" />
+                  <span className="underline decoration-dotted">{facility.city}, {facility.state}</span>
+                </a>
               )}
             </div>
           </div>
@@ -69,7 +75,7 @@ export default function FacilityCard({ facility }: FacilityCardProps) {
           {facility.doctor_name && (
             <div className="flex items-center gap-2 text-xs text-slate-200 font-bold font-[var(--font-body)]">
               <User className="w-3.5 h-3.5 text-[#38BDF8]" />
-              Lead: {facility.doctor_name}
+              Specialist: {facility.doctor_name}
             </div>
           )}
 

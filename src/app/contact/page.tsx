@@ -66,17 +66,23 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#0A192F] border border-[rgba(100,200,255,0.1)] flex items-center justify-center shrink-0 text-white font-bold">
-                    <MapPin className="w-5 h-5 text-[#38BDF8]" />
+                <a
+                  href="https://maps.google.com/?q=Active+Care+Physiotherapy+Center,+Velachery,+Chennai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-4 group/loc"
+                  title="Open in Google Maps"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#0A192F] group-hover/loc:bg-[#0284C7]/20 border border-[rgba(100,200,255,0.1)] group-hover/loc:border-[#38BDF8]/50 flex items-center justify-center shrink-0 text-white font-bold transition-colors">
+                    <MapPin className="w-5 h-5 text-[#38BDF8] group-hover/loc:scale-110 transition-transform" />
                   </div>
                   <div className="font-[var(--font-body)]">
-                    <p className="text-xs text-slate-400 font-bold uppercase">Central Street Address</p>
-                    <p className="text-sm font-bold text-slate-200 leading-snug">
+                    <p className="text-xs text-slate-400 group-hover/loc:text-[#38BDF8] font-bold uppercase transition-colors">Central Street Address (Click for Maps)</p>
+                    <p className="text-sm font-bold text-slate-200 group-hover/loc:text-white leading-snug underline decoration-dotted transition-colors">
                       938, MIG 938, 1st Main Rd, near Lakshmi super market, TamilNadu Housing Board Colony, Periyar Nagar, Velachery, Chennai, Greater Chennai, Tamil Nadu 600042
                     </p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 

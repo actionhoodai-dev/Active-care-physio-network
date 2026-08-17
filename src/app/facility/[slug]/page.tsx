@@ -7,7 +7,7 @@ import { getFacilities, getFacilityBySlug } from '@/lib/data';
 import { generateLocalBusinessSchema } from '@/lib/schema';
 import {
   Building2, MapPin, Phone, Mail, ChevronRight, CheckCircle2,
-  Stethoscope, ArrowLeft, Clock, User, CalendarClock, IndianRupee,
+  Stethoscope, ArrowLeft, Clock, User, CalendarClock, ExternalLink,
 } from 'lucide-react';
 
 interface PageProps {
@@ -41,6 +41,10 @@ export default async function FacilityDetailPage({ params }: PageProps) {
 
   const localBusinessSchema = generateLocalBusinessSchema(facility);
   const dayOrder = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'] as const;
+  const mapsUrl =
+    facility.google_maps_url ||
+    facility.google_business_url ||
+    `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`;
 
   return (
     <div className="py-10 bg-[#0A192F] text-slate-100 min-h-screen">
@@ -76,17 +80,33 @@ export default async function FacilityDetailPage({ params }: PageProps) {
               {facility.doctor_name && (
                 <p className="flex items-center gap-2 text-sm text-slate-300 font-medium font-[var(--font-body)]">
                   <User className="w-4 h-4 text-[#38BDF8]" />
-                  Lead Doctor: <strong className="text-white">{facility.doctor_name}</strong>
+                  Specialist: <strong className="text-white">{facility.doctor_name}</strong>
                 </p>
               )}
               {facility.address && (
-                <p className="flex items-center gap-2 text-sm text-slate-300 font-medium font-[var(--font-body)]">
-                  <MapPin className="w-4 h-4 text-[#38BDF8] shrink-0" />
-                  {facility.address}
-                </p>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-slate-300 hover:text-[#38BDF8] transition-colors font-medium font-[var(--font-body)] group"
+                  title="Open location on Google Maps"
+                >
+                  <MapPin className="w-4 h-4 text-[#38BDF8] group-hover:scale-110 transition-transform shrink-0" />
+                  <span className="underline decoration-dotted underline-offset-4">{facility.address}</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#38BDF8] opacity-70 shrink-0" />
+                </a>
               )}
             </div>
-            <div className="shrink-0">
+            <div className="shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-accent text-sm font-bold justify-center !py-3 !px-5 shadow-lg"
+              >
+                <MapPin className="w-4 h-4" />
+                <span>Google Maps / Profile</span>
+              </a>
               <ContactButton websiteUrl={facility.website_url} googleBusinessUrl={facility.google_business_url} size="lg" className="shadow-lg" />
             </div>
           </div>
@@ -113,32 +133,6 @@ export default async function FacilityDetailPage({ params }: PageProps) {
               </h2>
               <p className="text-slate-300 leading-relaxed text-base font-[var(--font-body)]">{facility.description}</p>
             </div>
-
-            {/* Consultation Fees */}
-            {facility.consultations && facility.consultations.length > 0 && (
-              <div className="bg-[#112240] rounded-2xl p-6 sm:p-8 border border-[rgba(100,200,255,0.08)] shadow-sm space-y-5" data-animate="fade">
-                <h2 className="text-xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
-                  <IndianRupee className="w-5 h-5 text-[#38BDF8]" /> Online Appointments &amp; Fees
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {facility.consultations.map((option, idx) => (
-                    <div key={idx} className="p-5 rounded-2xl bg-[#0A192F] border border-[rgba(100,200,255,0.12)] flex flex-col justify-between space-y-4">
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <h3 className="font-extrabold text-base text-white font-[var(--font-heading)]">{option.title}</h3>
-                          <span className="badge bg-[#0284C7] text-white text-xs font-bold">{option.fee}</span>
-                        </div>
-                        <p className="text-xs font-bold text-slate-400 font-[var(--font-body)]">{option.duration}</p>
-                        <p className="text-xs text-slate-300 leading-relaxed font-[var(--font-body)]">{option.description}</p>
-                      </div>
-                      <a href={facility.website_url || '#contact'} target="_blank" rel="noopener noreferrer" className="btn-accent text-xs font-bold justify-center !py-2.5">
-                        BOOK CONSULTATION ({option.fee})
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Services */}
             {facility.services && facility.services.length > 0 && (
@@ -187,14 +181,34 @@ export default async function FacilityDetailPage({ params }: PageProps) {
               </div>
             )}
 
-            {/* Map */}
+            {/* Map & Address Block */}
             {facility.address && (
               <div className="bg-[#112240] rounded-2xl p-6 sm:p-8 border border-[rgba(100,200,255,0.08)] shadow-sm space-y-4" data-animate="fade">
-                <h2 className="text-xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-[#38BDF8]" /> Location &amp; Directions
-                </h2>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <h2 className="text-xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-[#38BDF8]" /> Location &amp; Directions
+                  </h2>
+                  <a
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#F59E0B] hover:text-[#38BDF8] transition-colors"
+                  >
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span>Open in Google Maps Application</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
                 <p className="text-sm text-slate-300 font-[var(--font-body)]">
-                  Address: <strong className="text-white">{facility.address}</strong>
+                  Address:{' '}
+                  <a
+                    href={mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-white hover:text-[#38BDF8] underline decoration-dotted transition-colors"
+                  >
+                    {facility.address}
+                  </a>
                 </p>
                 <GoogleMap address={facility.address} embedUrl={facility.map_embed_url} />
               </div>
@@ -205,14 +219,14 @@ export default async function FacilityDetailPage({ params }: PageProps) {
           <div className="lg:col-span-4 space-y-6" data-animate="scale">
             <div className="bg-[#112240] rounded-2xl p-6 border border-[rgba(100,200,255,0.08)] shadow-sm space-y-5">
               <h3 className="text-lg font-bold font-[var(--font-heading)] text-white border-b border-[rgba(100,200,255,0.08)] pb-3">
-                Contact Details
+                Contact &amp; Location Details
               </h3>
               <div className="space-y-4">
                 {facility.doctor_name && (
                   <div className="flex items-start gap-3">
                     <User className="w-4 h-4 text-[#38BDF8] mt-1 shrink-0" />
                     <div className="font-[var(--font-body)]">
-                      <p className="text-xs text-slate-400 font-bold uppercase">Lead Specialist</p>
+                      <p className="text-xs text-slate-400 font-bold uppercase">Specialist</p>
                       <p className="text-sm font-bold text-white">{facility.doctor_name}</p>
                     </div>
                   </div>
@@ -242,14 +256,30 @@ export default async function FacilityDetailPage({ params }: PageProps) {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-[#38BDF8] mt-1 shrink-0" />
                     <div className="font-[var(--font-body)]">
-                      <p className="text-xs text-slate-400 font-bold uppercase">Address</p>
-                      <p className="text-sm font-medium text-slate-300 leading-snug">{facility.address}</p>
+                      <p className="text-xs text-slate-400 font-bold uppercase">Location Map Address</p>
+                      <a
+                        href={mapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-medium text-slate-300 hover:text-white leading-snug underline decoration-dotted block transition-colors"
+                        title="Click to open in Google Maps"
+                      >
+                        {facility.address}
+                      </a>
                     </div>
                   </div>
                 )}
               </div>
               <div className="pt-4 border-t border-[rgba(100,200,255,0.08)] space-y-3">
-                <p className="text-xs font-bold text-slate-400 font-[var(--font-body)]">Official Redirect:</p>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A192F] hover:bg-[#0284C7]/20 text-xs font-bold text-[#F59E0B] hover:text-white border border-[#F59E0B]/30 transition-all shadow-md"
+                >
+                  <MapPin className="w-4 h-4 text-[#F59E0B]" />
+                  <span>Open Google Maps Location</span>
+                </a>
                 <ContactButton websiteUrl={facility.website_url} googleBusinessUrl={facility.google_business_url} size="md" className="w-full justify-center" />
               </div>
             </div>

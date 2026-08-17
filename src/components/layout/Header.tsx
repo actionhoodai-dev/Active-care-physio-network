@@ -119,12 +119,6 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/admin"
-              className="ml-2 px-3 py-1.5 text-xs font-bold text-[#38BDF8] hover:text-white bg-[#112240] hover:bg-[#0284C7] border border-[#0284C7]/30 rounded-lg transition-all duration-200 font-[var(--font-body)]"
-            >
-              Admin
-            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -161,13 +155,6 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          <Link
-            href="/admin"
-            onClick={() => setIsOpen(false)}
-            className="block px-4 py-3 text-[0.9375rem] font-bold text-[#38BDF8] hover:text-white hover:bg-[#112240] rounded-lg transition-all font-[var(--font-body)]"
-          >
-            Admin Portal
-          </Link>
         </div>
       </div>
     </header>

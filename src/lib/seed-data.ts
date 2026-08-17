@@ -47,10 +47,10 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
   {
     name: "DR.PAUL'S ORTHO CLINIC",
     slug: 'dr-pauls-ortho-clinic',
-    type: 'Orthopedic Specialty Clinic',
-    tagline: 'Refined Orthopedic Care for Active Lifestyles — Expert Care, Accurate Diagnosis, Better Mobility, Stronger You',
+    type: 'Orthopedic & Physiotherapy Specialty Clinic',
+    tagline: 'Refined Orthopedic Care & Physiotherapy for Active Lifestyles — Expert Care, Accurate Diagnosis, Better Mobility, Stronger You',
     description:
-      "At DR.PAUL'S ORTHO CLINIC, we deliver sophisticated, personalized orthopaedic treatment to active individuals, trauma cases, and athletes. Specializing in Trauma Care, Joint Replacement, Spine Therapy, and Sports Medicine. Led by expert orthopedic surgeon Dr. Paul.",
+      "At DR.PAUL'S ORTHO CLINIC, we deliver sophisticated, personalized orthopaedic treatment and specialized physiotherapy care to active individuals, trauma cases, and athletes. Specializing in Physiotherapy & Rehabilitation, Trauma Care, Joint Replacement, Spine Therapy, and Sports Medicine.",
     website_url: 'https://drpaulsorthoclinic.com/',
     google_business_url: 'https://drpaulsorthoclinic.com/',
     phone: '+91 8838939754',
@@ -61,7 +61,7 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
     state: 'Tamil Nadu',
     logo_url: '/dr-pauls-banner.png',
     cover_image_url: '/dr-pauls-banner.png',
-    doctor_name: 'Dr. Paul',
+    doctor_name: 'Orthopedic & Joint Care Specialist',
     opening_hours: {
       monday: '05:00 PM – 09:30 PM',
       tuesday: '05:00 PM – 09:30 PM',
@@ -73,27 +73,14 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
     },
     flexible_hours: 'Consultation: Mon - Sat 5 PM to 9.30 PM. Sunday on appointment only. By appointment on major holidays.',
     stats: [
-      { value: '4 Core', label: 'Trauma · Joint · Spine · Sports' },
-      { value: '₹400', label: 'Initial Consultation Fee' },
-      { value: '₹200', label: 'Review Consultation Fee' },
+      { value: 'Specialist', label: 'Orthopedic Surgery & Trauma' },
+      { value: 'Active Rehab', label: 'Physiotherapy & Sports Rehab' },
+      { value: 'Advanced Care', label: 'Joint Replacement & Spine' },
+      { value: '5 PM – 9:30 PM', label: 'Evening Consultations' },
     ],
     social_links: null,
     google_maps_url: 'https://maps.google.com/?q=DR.PAUL%27S+ORTHO+CLINIC,+Medavakkam,+Chennai',
     map_embed_url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.928843121064!2d80.18768517024745!3d12.912294888348905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d0012cbb7ab%3A0xdb8a425ae0f03b9c!2sDR.PAUL%27s%20ORTHO%20CLINIC!5e0!3m2!1sen!2sin!4v1786561392185!5m2!1sen!2sin',
-    consultations: [
-      {
-        title: 'Initial Consultation',
-        duration: '5 mins',
-        fee: '₹400',
-        description: 'Comprehensive evaluation of orthopedic condition.',
-      },
-      {
-        title: 'Review Consultation',
-        duration: '5 mins',
-        fee: '₹200',
-        description: 'Follow-up evaluation for existing patients.',
-      },
-    ],
   },
   {
     name: 'Arunai Clinic',
@@ -206,6 +193,8 @@ export const seedFacilityServices: { facilitySlug: string; serviceSlug: string }
   { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'joint-care' },
   { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'spine-care' },
   { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'sports-injury-rehabilitation' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'back-pain' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'arthritis-treatment' },
   { facilitySlug: 'arunai-clinic', serviceSlug: 'neurological-care' },
   { facilitySlug: 'arunai-clinic', serviceSlug: 'diabetes-management' },
 ];

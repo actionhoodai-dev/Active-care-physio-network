@@ -1,7 +1,7 @@
 export interface ConsultationOption {
   title: string;
-  duration: string;
-  fee: string;
+  duration?: string;
+  fee?: string;
   description: string;
 }
 

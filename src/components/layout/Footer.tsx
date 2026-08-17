@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Globe, Shield } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Globe } from 'lucide-react';
 import { seedFacilities } from '@/lib/seed-data';
 
 export default function Footer() {
@@ -40,7 +40,6 @@ export default function Footer() {
                 { name: 'Our Network', href: '/our-network' },
                 { name: 'Services', href: '/services' },
                 { name: 'Contact', href: '/contact' },
-                { name: 'Admin Portal', href: '/admin' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-sm text-slate-300 hover:text-amber-400 transition-colors duration-200">
@@ -118,10 +117,18 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
-                <span className="text-sm text-slate-300 leading-snug">
-                  938, MIG 938, 1st Main Rd, near Lakshmi super market, TNHB Colony, Velachery, Chennai, Tamil Nadu 600042
-                </span>
+                <a
+                  href="https://maps.google.com/?q=Active+Care+Physiotherapy+Center,+Velachery,+Chennai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-slate-300 hover:text-amber-400 transition-colors group"
+                  title="Open on Google Maps"
+                >
+                  <MapPin className="w-4 h-4 text-amber-400 group-hover:scale-110 mt-0.5 shrink-0 transition-transform" />
+                  <span className="text-sm leading-snug underline decoration-dotted">
+                    938, MIG 938, 1st Main Rd, near Lakshmi super market, TNHB Colony, Velachery, Chennai, Tamil Nadu 600042
+                  </span>
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
@@ -142,9 +149,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Active Care Physiotherapy Centre. All rights reserved.
           </p>
           <div className="flex items-center gap-4 font-[var(--font-body)]">
-            <Link href="/admin" className="text-xs text-slate-400 hover:text-[#38BDF8] flex items-center gap-1 transition-colors">
-              <Shield className="w-3 h-3" /> Admin
-            </Link>
             <Link href="#" className="text-xs text-slate-400 hover:text-slate-200 transition-colors">Privacy Policy</Link>
             <Link href="#" className="text-xs text-slate-400 hover:text-slate-200 transition-colors">Terms of Service</Link>
           </div>

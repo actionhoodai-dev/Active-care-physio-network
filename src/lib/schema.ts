@@ -25,7 +25,6 @@ export function generateLocalBusinessSchema(facility: Facility) {
       ? { '@type': 'GeoCoordinates', latitude: 12.9123, longitude: 80.1877 }
       : { '@type': 'GeoCoordinates', latitude: 12.9900, longitude: 80.2069 },
     image: facility.cover_image_url || facility.logo_url,
-    priceRange: '₹₹',
     aggregateRating: facility.slug === 'active-care-physiotherapy-center'
       ? { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '5000', bestRating: '5' }
       : undefined,
