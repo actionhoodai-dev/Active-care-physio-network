@@ -1,11 +1,30 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import ServiceCard from '@/components/ui/ServiceCard';
 import { getServices } from '@/lib/data';
 import { ArrowRight } from 'lucide-react';
 
-export const metadata = {
-  title: 'Services Directory | Activecare Healthcare Network',
-  description: 'Explore all specialized medical and rehabilitation categories offered across Activecare Healthcare Network facilities.',
+export const metadata: Metadata = {
+  title: 'Medical Services & Specialties | Physiotherapy, Orthopedics, Neurology | Velachery & Medavakkam, Chennai',
+  description:
+    'Complete directory of medical services at Activecare Healthcare Network — Physiotherapy, Sports Injury Rehabilitation, Orthopedic Surgery, Joint Replacement, Spine Care, Trauma Care, Neurology, Diabetes Management. Serving Velachery, Medavakkam & Chennai.',
+  keywords: [
+    'physiotherapy services Velachery Chennai',
+    'orthopedic services Medavakkam Chennai',
+    'sports injury rehabilitation Chennai',
+    'back pain treatment Velachery',
+    'joint replacement surgery Medavakkam',
+    'arthritis treatment Velachery',
+    'neurology clinic Velachery',
+    'diabetes clinic Velachery Chennai',
+    'spine care Chennai',
+    'trauma care Medavakkam',
+  ],
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Medical Services | Activecare Healthcare Network',
+    description: 'Physiotherapy, orthopedics, neurology & diabetes services across Velachery & Medavakkam, Chennai.',
+  },
 };
 
 export default async function ServicesPage() {

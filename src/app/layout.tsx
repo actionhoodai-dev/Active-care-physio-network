@@ -21,34 +21,106 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://activecarephysio.in'),
   title: {
-    default: 'Activecare Physiotherapy & Healthcare Network',
+    default: 'Activecare Physiotherapy & Healthcare Network | Velachery, Chennai',
     template: '%s | Activecare Healthcare Network',
   },
   description:
-    'Activecare Healthcare Network connects Activecare Physiotherapy & Sports Injury Clinic, DR. PAUL\'S ORTHO CLINIC, and Arunai Clinic under one umbrella.',
+    'Activecare Healthcare Network — Chennai\'s trusted multi-clinic healthcare hub connecting Activecare Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. Senthil Nathan (15+ years). Book appointments: +91 9884308186.',
   keywords: [
+    // Brand Names
+    'Activecare Physiotherapy',
     'Activecare Physiotherapy & Sports Injury Clinic',
-    'Dr Paul Ortho Clinic',
+    'Active Care Physiotherapy Center',
+    'Active Care Physio Velachery',
+    'DR PAUL ORTHO CLINIC',
+    'Dr Pauls Ortho Clinic Medavakkam',
+    'Dr Paul Orthopedic Clinic Chennai',
     'Arunai Clinic',
+    'Arunai Clinic Velachery',
+    // Doctor Names
     'Dr Senthil Nathan Physiotherapy',
+    'Dr Senthil Nathan Velachery',
     'Dr Paul Orthopedic',
-    'Tiruvannamalai Healthcare',
+    'Dr Paul Ortho Medavakkam',
+    // Services + Location
+    'physiotherapy Velachery',
+    'physiotherapy center Velachery Chennai',
+    'physiotherapy near me Velachery',
+    'sports injury clinic Velachery',
+    'sports injury rehabilitation Chennai',
+    'ortho clinic Medavakkam',
+    'orthopedic doctor Medavakkam Chennai',
+    'orthopedic clinic near Velachery',
+    'joint replacement Medavakkam',
+    'spine care Chennai',
+    'trauma care Medavakkam',
+    'neurologist Velachery',
+    'neurology clinic Velachery Chennai',
+    'diabetes clinic Velachery',
+    'diabetes management Chennai',
+    'back pain treatment Velachery',
+    'knee pain treatment Chennai',
+    'arthritis treatment Velachery',
+    'balance exercise therapy Chennai',
+    'foot ankle pain Velachery',
+    // General
+    'best physiotherapy Chennai',
+    'best ortho clinic Chennai',
+    'healthcare network Chennai',
+    'multi-clinic hospital hub Chennai',
+    'physiotherapy home visit Chennai',
+    'online physiotherapy consultation',
   ],
-  authors: [{ name: 'Activecare Healthcare Network' }],
+  authors: [
+    { name: 'Activecare Healthcare Network' },
+    { name: 'Dr. Senthil Nathan' },
+  ],
+  creator: 'Activecare Healthcare Network',
+  publisher: 'Activecare Healthcare Network',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Activecare Healthcare Network | Centralized Hospital Hub',
+    title: 'Activecare Healthcare Network | Physiotherapy, Orthopedics & Neurology | Velachery & Medavakkam, Chennai',
     description:
-      'Centralized parent healthcare portal connecting clinics, specialty centers, and medical facilities.',
-    url: 'https://activecarephysio.in',
+      'Chennai\'s trusted multi-clinic healthcare hub — Activecare Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 5000+ patients treated.',
+    url: '/',
     siteName: 'Activecare Healthcare Network',
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: '/logo.png',
+        width: 512,
+        height: 512,
+        alt: 'Activecare Healthcare Network Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Activecare Healthcare Network | Physiotherapy, Orthopedics & Neurology',
+    description:
+      'Chennai\'s trusted multi-clinic healthcare hub. Expert physiotherapy, orthopedic surgery, neurology & diabetes care across Velachery & Medavakkam.',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1,
+    },
   },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: 'your-google-verification-code',
+  },
+  category: 'Healthcare',
 };
 
 export default function RootLayout({
