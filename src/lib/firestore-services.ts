@@ -6,8 +6,6 @@ import {
   setDoc,
   updateDoc,
   deleteDoc,
-  query,
-  orderBy,
   serverTimestamp,
 } from 'firebase/firestore';
 import { db, isFirebaseConfigured } from '@/lib/firebase';
@@ -27,8 +25,7 @@ export async function getAdminServices(): Promise<Service[]> {
 
   try {
     const servicesRef = collection(db, SERVICES_COLLECTION);
-    const q = query(servicesRef, orderBy('name', 'asc'));
-    const snapshot = await getDocs(q);
+    const snapshot = await getDocs(servicesRef);
 
     if (snapshot.empty) {
       return seedServices.map((s, i) => ({
@@ -48,7 +45,7 @@ export async function getAdminServices(): Promise<Service[]> {
         icon: data.icon || undefined,
         created_at: data.created_at?.toDate?.()?.toISOString?.() || new Date().toISOString(),
       } as Service;
-    });
+    }).sort((a, b) => a.name.localeCompare(b.name));
   } catch (error) {
     console.error('Error fetching services from Firestore:', error);
     return seedServices.map((s, i) => ({
