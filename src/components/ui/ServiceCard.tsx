@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Stethoscope,
   Bone,
@@ -9,6 +10,17 @@ import {
   Crosshair,
   Brain,
   Syringe,
+  SunMedium,
+  Sparkles,
+  Trophy,
+  Baby,
+  HeartHandshake,
+  Compass,
+  Wind,
+  HeartPulse,
+  ShieldCheck,
+  Bandage,
+  Gauge,
 } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -19,6 +31,24 @@ interface ServiceCardProps {
 }
 
 const iconMap: Record<string, React.ReactNode> = {
+  'electrotherapy': <Zap className="w-7 h-7" />,
+  'thermal-physical-modalities': <SunMedium className="w-7 h-7" />,
+  'manual-therapy': <Sparkles className="w-7 h-7" />,
+  'exercise-therapy': <Dumbbell className="w-7 h-7" />,
+  'neuro-physiotherapy': <Brain className="w-7 h-7" />,
+  'orthopaedic-physiotherapy': <Bone className="w-7 h-7" />,
+  'sports-physiotherapy': <Trophy className="w-7 h-7" />,
+  'spine-physiotherapy': <Activity className="w-7 h-7" />,
+  'pediatric-physiotherapy': <Baby className="w-7 h-7" />,
+  'geriatric-physiotherapy': <HeartHandshake className="w-7 h-7" />,
+  'vestibular-physiotherapy': <Compass className="w-7 h-7" />,
+  'post-surgical-rehabilitation': <Stethoscope className="w-7 h-7" />,
+  'respiratory-physiotherapy': <Wind className="w-7 h-7" />,
+  'womens-health-physiotherapy': <HeartPulse className="w-7 h-7" />,
+  'pain-management': <ShieldCheck className="w-7 h-7" />,
+  'taping-supportive-techniques': <Bandage className="w-7 h-7" />,
+  'functional-rehabilitation': <PersonStanding className="w-7 h-7" />,
+  'advanced-rehabilitation': <Gauge className="w-7 h-7" />,
   'neurological-care': <Brain className="w-7 h-7" />,
   'diabetes-management': <Syringe className="w-7 h-7" />,
   'arthritis-treatment': <Bone className="w-7 h-7" />,
@@ -29,8 +59,6 @@ const iconMap: Record<string, React.ReactNode> = {
   'joint-care': <Bone className="w-7 h-7" />,
   'spine-care': <Activity className="w-7 h-7" />,
   'sports-injury-rehabilitation': <Dumbbell className="w-7 h-7" />,
-  'general-medicine': <Stethoscope className="w-7 h-7" />,
-  'pain-management': <Zap className="w-7 h-7" />,
 };
 
 /* Rich Dark Accent Icon Colors */
@@ -65,10 +93,10 @@ export default function ServiceCard({
           {icon}
         </div>
 
-        <h3 className="text-lg font-bold font-[var(--font-heading)] text-white mb-2">
+        <h3 className="text-lg font-bold font-[var(--font-heading)] text-white mb-2 leading-snug">
           {name}
         </h3>
-        <p className="text-sm text-slate-300 leading-relaxed line-clamp-3 font-[var(--font-body)]">
+        <p className="text-sm text-slate-300 leading-relaxed font-[var(--font-body)]">
           {description}
         </p>
       </div>

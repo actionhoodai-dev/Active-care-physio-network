@@ -45,7 +45,7 @@ export async function getAdminServices(): Promise<Service[]> {
         icon: data.icon || undefined,
         created_at: data.created_at?.toDate?.()?.toISOString?.() || new Date().toISOString(),
       } as Service;
-    }).sort((a, b) => a.name.localeCompare(b.name));
+    }).sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
   } catch (error) {
     console.error('Error fetching services from Firestore:', error);
     return seedServices.map((s, i) => ({

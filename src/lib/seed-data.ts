@@ -122,79 +122,141 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
 
 export const seedServices: Omit<Service, 'id' | 'created_at'>[] = [
   {
-    name: 'Neurological Disease Care',
-    slug: 'neurological-care',
+    name: '1. Electrotherapy',
+    slug: 'electrotherapy',
     description:
-      'Specialized diagnostic evaluation, treatment, and ongoing management for neurological disorders, nerve health, and balance conditions.',
+      'Advanced electro-therapeutic modalities to relieve pain, promote tissue repair, and re-educate neuromuscular pathways. Includes IFT (Interferential Therapy), TENS, EMS / NMES, FES (Functional Electrical Stimulation), Russian stimulation, Diadynamic currents, and Microcurrent therapy.',
   },
   {
-    name: 'Diabetes & Metabolic Management',
-    slug: 'diabetes-management',
+    name: '2. Thermal & Physical Modalities',
+    slug: 'thermal-physical-modalities',
     description:
-      'Comprehensive diabetic care, blood sugar regulation, preventive health screenings, and lifestyle management for long-term health.',
+      'Therapeutic thermal applications and physical modalities for deep circulation, pain relief, and collagen extensibility. Includes Ultrasound therapy, Therapeutic laser, Wax therapy / Paraffin wax bath, Hot pack, Cold pack / Cryotherapy, Contrast therapy, and Infrared therapy.',
   },
   {
-    name: 'Arthritis Treatment',
-    slug: 'arthritis-treatment',
+    name: '3. Manual Therapy',
+    slug: 'manual-therapy',
     description:
-      'Arthritis treatment typically aims to manage symptoms, slow down the progression of the disease, and improve quality of life through targeted physiotherapy and medication management.',
+      'Expert hands-on clinical interventions restoring joint range, resolving soft-tissue restrictions, and easing neural tension. Includes Joint mobilization, Soft-tissue mobilization, Myofascial release, Trigger-point therapy, Muscle energy techniques, Manual stretching, Fascial techniques, and Clinical manipulation.',
   },
   {
-    name: 'Back Pain Treatment',
-    slug: 'back-pain',
+    name: '4. Exercise Therapy',
+    slug: 'exercise-therapy',
     description:
-      'Back pain can result from various causes, including muscle strains, ligament sprains, poor posture, injury, or underlying medical conditions. We provide evidence-based treatment for full relief.',
+      'Structured therapeutic exercise regimens tailored for functional recovery and whole-body conditioning. Includes ROM exercises, Active & passive exercises, Stretching, Strengthening exercises, Resistance training, Isometric exercises, Progressive resistance exercises, Functional strengthening, Endurance training, and Cardiovascular conditioning.',
   },
   {
-    name: 'Balance Exercise Therapy',
-    slug: 'balance-exercise-therapy',
+    name: '5. Neuro Physiotherapy',
+    slug: 'neuro-physiotherapy',
     description:
-      'Balance exercise therapy, also known as balance training, is a form of physical therapy aimed at improving balance, stability, and coordination for fall prevention and mobility restoration.',
+      'Specialized neurological rehabilitation for Stroke, GBS, Parkinson’s, Multiple Sclerosis, Spinal cord injury, Peripheral nerve injury, and Facial palsy / Bell’s palsy. Features Balance & coordination training, Gait training, Proprioceptive training, Sensory re-education, Motor control training, and Neurodevelopmental therapy (NDT).',
   },
   {
-    name: 'Foot and Ankle Pain',
-    slug: 'foot-and-ankle-pain',
+    name: '6. Orthopaedic Physiotherapy',
+    slug: 'orthopaedic-physiotherapy',
     description:
-      'Foot and ankle pain can arise from various causes, including injuries, overuse, medical conditions, or structural issues. Our targeted therapy restores pain-free walking and mobility.',
+      'Comprehensive musculoskeletal care for Back pain, Neck pain, Shoulder pain & stiffness, Frozen shoulder, Tennis elbow, Wrist & hand problems, Hip pain, Knee pain, Ankle & foot problems, Arthritis rehabilitation, Ligament injuries, Tendon injuries, Muscle strains, and Post-fracture rehabilitation.',
   },
   {
-    name: 'Trauma & Fracture Care',
-    slug: 'trauma-care',
+    name: '7. Sports Physiotherapy',
+    slug: 'sports-physiotherapy',
     description:
-      'Emergency and planned orthopedic trauma care, fracture fixation, wound care, and post-traumatic joint restoration.',
+      'Dedicated athletic conditioning and trauma recovery covering Sports injury rehabilitation, Muscle strain & sprain rehabilitation, ACL & Meniscus rehabilitation, Rotator cuff rehabilitation, Return-to-sport training, Sports-specific strengthening, Agility training, and Injury prevention programs.',
   },
   {
-    name: 'Joint Replacement & Care',
-    slug: 'joint-care',
+    name: '8. Spine Physiotherapy',
+    slug: 'spine-physiotherapy',
     description:
-      'Comprehensive knee, hip, and shoulder joint evaluation, non-surgical joint management, and pre/post-operative surgical care.',
+      'Targeted spinal rehabilitation for Cervical spondylosis, Lumbar spondylosis, Disc-related pain, Sciatica, Postural correction, Core strengthening, Spinal stabilization, and Traction therapy.',
   },
   {
-    name: 'Spine & Back Therapy',
-    slug: 'spine-care',
+    name: '9. Pediatric Physiotherapy',
+    slug: 'pediatric-physiotherapy',
     description:
-      'Specialized spinal evaluation, disc management, sciatica treatment, and non-surgical posture rehabilitation.',
+      'Compassionate developmental therapy addressing Developmental delay, Cerebral palsy, Pediatric neurological conditions, Congenital conditions, Gross motor training, Balance & coordination, Gait training, and Postural training for children.',
   },
   {
-    name: 'Sports Injury Rehabilitation',
-    slug: 'sports-injury-rehabilitation',
+    name: '10. Geriatric Physiotherapy',
+    slug: 'geriatric-physiotherapy',
     description:
-      'Dedicated sports medicine services for athletes at all levels. Includes injury prevention, acute injury treatment, surgical and non-surgical management, and return-to-sport programs.',
+      'Specialized senior care focused on Senior citizen strengthening, Balance training, Fall-prevention programs, Walking / gait training, Arthritis management, Mobility training, and Functional independence in daily living.',
+  },
+  {
+    name: '11. Vestibular Physiotherapy',
+    slug: 'vestibular-physiotherapy',
+    description:
+      'Inner-ear and balance therapy including Vertigo rehabilitation, BPPV repositioning techniques, Vestibular adaptation exercises, Balance rehabilitation, Gaze stabilization, and Habituation exercises for dizziness and equilibrium restoration.',
+  },
+  {
+    name: '12. Post-Surgical Rehabilitation',
+    slug: 'post-surgical-rehabilitation',
+    description:
+      'Structured clinical recovery protocols following Knee replacement, Hip replacement, ACL reconstruction, Fracture surgery, Shoulder surgery, Spine surgery, and General post-operative mobility training.',
+  },
+  {
+    name: '13. Respiratory Physiotherapy',
+    slug: 'respiratory-physiotherapy',
+    description:
+      'Cardiopulmonary physical therapy including Breathing exercises, Chest physiotherapy, Airway clearance techniques, Diaphragmatic breathing, Incentive spirometry training, Post-operative respiratory rehabilitation, and Pulmonary conditioning.',
+  },
+  {
+    name: '14. Women’s Health Physiotherapy',
+    slug: 'womens-health-physiotherapy',
+    description:
+      'Specialized women’s wellness services covering Prenatal exercises, Postnatal rehabilitation, Pelvic-floor muscle training, Core rehabilitation, Postural correction, and Diastasis recti rehabilitation.',
+  },
+  {
+    name: '15. Pain Management',
+    slug: 'pain-management',
+    description:
+      'Multi-modal pain alleviation protocols for Acute pain management, Chronic pain management, Myofascial pain, Musculoskeletal pain, Postural pain, Therapeutic exercise programs, and Manual therapy-based pain management.',
+  },
+  {
+    name: '16. Taping & Supportive Techniques',
+    slug: 'taping-supportive-techniques',
+    description:
+      'Neuromuscular and biomechanical taping methods including Kinesio taping, Sports taping, McConnell taping, Joint support taping, and Edema-management lymphatic taping.',
+  },
+  {
+    name: '17. Functional Rehabilitation',
+    slug: 'functional-rehabilitation',
+    description:
+      'Functional life skills restoration including Activities of daily living (ADL) training, Functional mobility, Sit-to-stand training, Stair training, Transfer training, Walking aids training, Workplace ergonomics, and Posture correction.',
+  },
+  {
+    name: '18. Advanced Rehabilitation',
+    slug: 'advanced-rehabilitation',
+    description:
+      'Modern state-of-the-art rehabilitation therapies including Shockwave therapy, Dry needling, Cupping therapy, Proprioceptive training, Suspension therapy, Balance-board training, Resistance-band training, and Functional Electrical Stimulation (FES).',
   },
 ];
 
 export const seedFacilityServices: { facilitySlug: string; serviceSlug: string }[] = [
-  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'arthritis-treatment' },
-  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'back-pain' },
-  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'balance-exercise-therapy' },
-  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'foot-and-ankle-pain' },
-  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'sports-injury-rehabilitation' },
-  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'trauma-care' },
-  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'joint-care' },
-  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'spine-care' },
-  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'sports-injury-rehabilitation' },
-  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'back-pain' },
-  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'arthritis-treatment' },
-  { facilitySlug: 'arunai-clinic', serviceSlug: 'neurological-care' },
-  { facilitySlug: 'arunai-clinic', serviceSlug: 'diabetes-management' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'electrotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'thermal-physical-modalities' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'manual-therapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'exercise-therapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'neuro-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'orthopaedic-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'sports-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'spine-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'pediatric-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'geriatric-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'vestibular-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'post-surgical-rehabilitation' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'respiratory-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'womens-health-physiotherapy' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'pain-management' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'taping-supportive-techniques' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'functional-rehabilitation' },
+  { facilitySlug: 'active-care-physiotherapy-center', serviceSlug: 'advanced-rehabilitation' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'orthopaedic-physiotherapy' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'spine-physiotherapy' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'sports-physiotherapy' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'post-surgical-rehabilitation' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'pain-management' },
+  { facilitySlug: 'dr-pauls-ortho-clinic', serviceSlug: 'manual-therapy' },
+  { facilitySlug: 'arunai-clinic', serviceSlug: 'neuro-physiotherapy' },
+  { facilitySlug: 'arunai-clinic', serviceSlug: 'geriatric-physiotherapy' },
+  { facilitySlug: 'arunai-clinic', serviceSlug: 'exercise-therapy' },
 ];
