@@ -2,7 +2,7 @@ import HeroSection from '@/components/ui/HeroSection';
 import LocationsStrip from '@/components/ui/LocationsStrip';
 import SectionHeading from '@/components/ui/SectionHeading';
 import FacilityCard from '@/components/ui/FacilityCard';
-import ServiceCard from '@/components/ui/ServiceCard';
+import LiveServicesGrid from '@/components/ui/LiveServicesGrid';
 import ContactForm from '@/components/ui/ContactForm';
 import { getFacilities, getServices } from '@/lib/data';
 import {
@@ -145,17 +145,7 @@ export default async function HomePage() {
             title="Treatment & Services Offered"
             subtitle="Specialized physiotherapy, orthopedic care, neurological treatment, and diabetes management across our clinic network."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={service.id}
-                name={service.name}
-                description={service.description}
-                slug={service.slug}
-                index={index}
-              />
-            ))}
-          </div>
+          <LiveServicesGrid initialServices={services} />
         </div>
       </section>
 

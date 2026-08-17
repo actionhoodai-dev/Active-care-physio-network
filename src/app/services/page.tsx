@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ServiceCard from '@/components/ui/ServiceCard';
+import LiveServicesGrid from '@/components/ui/LiveServicesGrid';
 import { getServices } from '@/lib/data';
 import { ArrowRight } from 'lucide-react';
 
@@ -49,16 +49,8 @@ export default async function ServicesPage() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service, idx) => (
-            <ServiceCard
-              key={service.id}
-              name={service.name}
-              description={service.description}
-              slug={service.slug}
-              index={idx}
-            />
-          ))}
+        <div className="mb-16">
+          <LiveServicesGrid initialServices={services} gridCols="grid-cols-1 md:grid-cols-2 lg:grid-cols-3" />
         </div>
 
         {/* Callout Card */}
