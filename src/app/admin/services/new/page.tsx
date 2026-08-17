@@ -9,6 +9,7 @@ import {
   Save,
   Stethoscope,
   AlertCircle,
+  X,
 } from 'lucide-react';
 
 export default function AdminNewServicePage() {
@@ -60,33 +61,34 @@ export default function AdminNewServicePage() {
   return (
     <div className="max-w-3xl space-y-6">
       {/* Back button & Title */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 sm:gap-4">
         <Link
           href="/admin/services"
-          className="p-2 rounded-xl bg-[#112240] hover:bg-[#1A365D] text-slate-300 hover:text-white border border-[rgba(100,200,255,0.08)] transition"
+          className="flex items-center justify-center w-11 h-11 rounded-xl bg-[#112240] hover:bg-[#1A365D] text-slate-300 hover:text-white border border-[rgba(100,200,255,0.08)] transition shrink-0 active:scale-95"
+          title="Back to services list"
         >
           <ArrowLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
-            <Stethoscope className="w-6 h-6 text-[#38BDF8]" />
+          <h1 className="text-xl sm:text-2xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
+            <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />
             Add New Medical Service
           </h1>
-          <p className="text-xs text-slate-400 font-[var(--font-body)]">
+          <p className="text-xs sm:text-sm text-slate-400 font-[var(--font-body)]">
             Create a new treatment or therapy offering for Active Care Physiotherapy Centre
           </p>
         </div>
       </div>
 
       {errorMsg && (
-        <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-2xl text-red-200 text-xs flex items-start gap-2.5">
+        <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-2xl text-red-200 text-xs sm:text-sm flex items-start gap-2.5">
           <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
           <span className="leading-relaxed">{errorMsg}</span>
         </div>
       )}
 
       {/* Form Card */}
-      <div className="bg-[#112240] rounded-3xl border border-[rgba(100,200,255,0.12)] p-6 sm:p-8 shadow-xl">
+      <div className="bg-[#112240] rounded-2xl sm:rounded-3xl border border-[rgba(100,200,255,0.12)] p-5 sm:p-8 shadow-xl">
         <form onSubmit={handleSubmit} className="space-y-5 font-[var(--font-body)]">
           <div>
             <label className="form-label" htmlFor="service-name">
@@ -99,16 +101,16 @@ export default function AdminNewServicePage() {
               value={name}
               onChange={(e) => handleNameChange(e.target.value)}
               placeholder="e.g. Laser Therapy, Post-Operative Rehabilitation..."
-              className="form-input"
+              className="form-input min-h-[44px]"
             />
           </div>
 
           <div>
-            <div className="flex items-center justify-between mb-1">
+            <div className="flex items-center justify-between mb-1.5">
               <label className="form-label mb-0" htmlFor="service-slug">
                 URL Identifier / Slug *
               </label>
-              <label className="text-[0.7rem] text-slate-400 flex items-center gap-1 cursor-pointer">
+              <label className="text-xs text-slate-300 flex items-center gap-1.5 cursor-pointer bg-[#0A192F] px-2.5 py-1 rounded-lg border border-[rgba(100,200,255,0.08)]">
                 <input
                   type="checkbox"
                   checked={autoSlug}
@@ -119,7 +121,7 @@ export default function AdminNewServicePage() {
               </label>
             </div>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono">
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-500 font-mono">
                 /
               </span>
               <input
@@ -132,11 +134,11 @@ export default function AdminNewServicePage() {
                   setSlug(e.target.value);
                 }}
                 placeholder="laser-therapy"
-                className="form-input pl-7 font-mono text-xs"
+                className="form-input pl-8 font-mono text-xs sm:text-sm min-h-[44px]"
               />
             </div>
             <p className="text-[0.7rem] text-slate-400 mt-1">
-              Unique URL slug used for internal referencing.
+              Unique identifier slug for this service
             </p>
           </div>
 
@@ -146,7 +148,7 @@ export default function AdminNewServicePage() {
             </label>
             <textarea
               id="service-desc"
-              rows={4}
+              rows={5}
               required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -156,22 +158,23 @@ export default function AdminNewServicePage() {
           </div>
 
           {/* Action Buttons */}
-          <div className="pt-4 border-t border-[rgba(100,200,255,0.08)] flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-[rgba(100,200,255,0.08)] flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3">
             <Link
               href="/admin/services"
-              className="btn-secondary text-xs font-bold !py-2.5 !px-5"
+              className="flex items-center justify-center gap-1.5 px-6 py-3 rounded-xl bg-[#0A192F] hover:bg-[#1A365D] text-slate-300 hover:text-white border border-[rgba(100,200,255,0.1)] text-sm font-bold transition min-h-[44px] active:scale-95"
             >
-              Cancel
+              <X className="w-4 h-4" />
+              <span>Cancel</span>
             </Link>
 
             <button
               type="submit"
               disabled={saving}
-              className="btn-primary text-xs font-bold !py-2.5 !px-6"
+              className="flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#0284C7] hover:bg-[#0369A1] text-white text-sm font-bold shadow-lg transition min-h-[44px] active:scale-95"
             >
               {saving ? (
                 <div className="flex items-center gap-2">
-                  <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   <span>Saving to Database...</span>
                 </div>
               ) : (
