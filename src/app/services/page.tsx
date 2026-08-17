@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Medical Services & Specialties | Physiotherapy, Orthopedics, Neurology | Velachery & Medavakkam, Chennai',
   description:
-    'Complete directory of medical services at Activecare Healthcare Network — Physiotherapy, Sports Injury Rehabilitation, Orthopedic Surgery, Joint Replacement, Spine Care, Trauma Care, Neurology, Diabetes Management. Serving Velachery, Medavakkam & Chennai.',
+    'Complete directory of medical services at Active Care Physiotherapy Centre — Physiotherapy, Sports Injury Rehabilitation, Orthopedic Surgery, Joint Replacement, Spine Care, Trauma Care, Neurology, Diabetes Management. Serving Velachery, Medavakkam & Chennai.',
   keywords: [
     'physiotherapy services Velachery Chennai',
     'orthopedic services Medavakkam Chennai',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/services' },
   openGraph: {
-    title: 'Medical Services | Activecare Healthcare Network',
+    title: 'Medical Services | Active Care Physiotherapy Centre',
     description: 'Physiotherapy, orthopedics, neurology & diabetes services across Velachery & Medavakkam, Chennai.',
   },
 };
@@ -43,7 +43,7 @@ export default async function ServicesPage() {
               Services &amp; Specialties
             </h1>
             <p className="text-slate-300 text-base sm:text-lg font-[var(--font-body)]">
-              From advanced joint rehabilitation and orthopedic surgery to neurological disease care and diabetes management.
+              From advanced joint rehabilitation and orthopedic surgery to neurological disease care and diabetes management at Active Care Physiotherapy Centre.
             </p>
           </div>
         </div>

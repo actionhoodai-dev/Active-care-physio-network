@@ -28,7 +28,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
         </div>
         <h3 className="text-xl font-bold font-[var(--font-heading)] text-emerald-200">Thank You!</h3>
         <p className="text-sm leading-relaxed text-emerald-100">
-          Your inquiry has been received. Our administration team at Activecare Healthcare Network will get back to you shortly.
+          Your inquiry has been received. Our administration team at Active Care Physiotherapy Centre will get back to you shortly.
         </p>
         <button
           onClick={() => setSubmitted(false)}
@@ -79,8 +79,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
       <div>
         <label className="form-label" htmlFor="contact-form-facility">Preferred Facility / Inquiry *</label>
         <select id="contact-form-facility" className="form-input">
-          <option value="general">General Network Inquiry</option>
-          <option value="active-care">Activecare Physiotherapy &amp; Sports Injury Clinic</option>
+          <option value="general">Active Care Physiotherapy Centre</option>
           <option value="dr-pauls">DR. PAUL&apos;S ORTHO CLINIC</option>
           <option value="arunai">Arunai Clinic</option>
         </select>

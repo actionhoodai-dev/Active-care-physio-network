@@ -95,14 +95,14 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group" id="header-logo">
             <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white p-1 flex items-center justify-center border border-slate-200 shadow-sm group-hover:border-[#0284C7] transition-all">
-              <img src="/logo.png" alt="Activecare Physiotherapy Emblem" className="w-full h-full object-contain" />
+              <img src="/logo.png" alt="Active Care Physiotherapy Centre Emblem" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <span className="text-base md:text-lg font-bold font-[var(--font-heading)] text-white leading-tight">
-                Activecare
+                Active Care
               </span>
               <span className="text-[0.55rem] md:text-[0.6rem] font-bold text-[#0284C7] tracking-wider uppercase leading-none font-[var(--font-body)]">
-                Physiotherapy &amp; Sports Injury
+                Physiotherapy Centre
               </span>
             </div>
           </Link>
@@ -119,6 +119,12 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
+            <Link
+              href="/admin"
+              className="ml-2 px-3 py-1.5 text-xs font-bold text-[#38BDF8] hover:text-white bg-[#112240] hover:bg-[#0284C7] border border-[#0284C7]/30 rounded-lg transition-all duration-200 font-[var(--font-body)]"
+            >
+              Admin
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -155,9 +161,15 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
+          <Link
+            href="/admin"
+            onClick={() => setIsOpen(false)}
+            className="block px-4 py-3 text-[0.9375rem] font-bold text-[#38BDF8] hover:text-white hover:bg-[#112240] rounded-lg transition-all font-[var(--font-body)]"
+          >
+            Admin Portal
+          </Link>
         </div>
       </div>
     </header>
   );
 }
-

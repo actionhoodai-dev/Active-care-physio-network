@@ -23,7 +23,7 @@ export default async function LocationsStrip() {
 
           {/* Location Links */}
           <div className="flex items-center gap-3 sm:gap-5 flex-wrap justify-center">
-            {facilities.map((facility, idx) => {
+            {facilities.map((facility) => {
               const mapsUrl =
                 facility.google_maps_url ||
                 `https://maps.google.com/?q=${encodeURIComponent(facility.address || facility.name)}`;

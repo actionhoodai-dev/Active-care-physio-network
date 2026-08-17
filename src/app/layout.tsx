@@ -1,10 +1,6 @@
 import type { Metadata } from 'next';
 import { Open_Sans, Lora } from 'next/font/google';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import BackToTop from '@/components/ui/BackToTop';
-import WhatsAppButton from '@/components/ui/WhatsAppButton';
-import ScrollAnimations from '@/components/ui/ScrollAnimations';
+import PublicLayoutChrome from '@/components/layout/PublicLayoutChrome';
 import { generateMedicalOrganizationSchema } from '@/lib/schema';
 import './globals.css';
 
@@ -23,17 +19,18 @@ const lora = Lora({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://activecarephysio.in'),
   title: {
-    default: 'Activecare Physiotherapy & Healthcare Network | Velachery, Chennai',
-    template: '%s | Activecare Healthcare Network',
+    default: 'Active Care Physiotherapy Centre | Velachery, Chennai',
+    template: '%s | Active Care Physiotherapy Centre',
   },
   description:
-    'Activecare Healthcare Network — Chennai\'s trusted multi-clinic healthcare hub connecting Activecare Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. Senthil Nathan (15+ years). Book appointments: +91 9884308186.',
+    'Active Care Physiotherapy Centre — Chennai\'s trusted multi-clinic healthcare network connecting Active Care Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. Senthil Nathan (15+ years). Book appointments: +91 9884308186.',
   keywords: [
     // Brand Names
-    'Activecare Physiotherapy',
-    'Activecare Physiotherapy & Sports Injury Clinic',
-    'Active Care Physiotherapy Center',
+    'Active Care Physiotherapy Centre',
+    'Active Care Physiotherapy',
+    'Active Care Physiotherapy & Sports Injury Clinic',
     'Active Care Physio Velachery',
+    'Active Care Physio',
     'DR PAUL ORTHO CLINIC',
     'Dr Pauls Ortho Clinic Medavakkam',
     'Dr Paul Orthopedic Clinic Chennai',
@@ -74,20 +71,20 @@ export const metadata: Metadata = {
     'online physiotherapy consultation',
   ],
   authors: [
-    { name: 'Activecare Healthcare Network' },
+    { name: 'Active Care Physiotherapy Centre' },
     { name: 'Dr. Senthil Nathan' },
   ],
-  creator: 'Activecare Healthcare Network',
-  publisher: 'Activecare Healthcare Network',
+  creator: 'Active Care Physiotherapy Centre',
+  publisher: 'Active Care Physiotherapy Centre',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Activecare Healthcare Network | Physiotherapy, Orthopedics & Neurology | Velachery & Medavakkam, Chennai',
+    title: 'Active Care Physiotherapy Centre | Physiotherapy, Orthopedics & Neurology | Velachery & Medavakkam, Chennai',
     description:
-      'Chennai\'s trusted multi-clinic healthcare hub — Activecare Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 5000+ patients treated.',
+      'Chennai\'s trusted multi-clinic healthcare hub — Active Care Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 5000+ patients treated.',
     url: '/',
-    siteName: 'Activecare Healthcare Network',
+    siteName: 'Active Care Physiotherapy Centre',
     locale: 'en_IN',
     type: 'website',
     images: [
@@ -95,13 +92,13 @@ export const metadata: Metadata = {
         url: '/logo.png',
         width: 512,
         height: 512,
-        alt: 'Activecare Healthcare Network Logo',
+        alt: 'Active Care Physiotherapy Centre Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Activecare Healthcare Network | Physiotherapy, Orthopedics & Neurology',
+    title: 'Active Care Physiotherapy Centre | Physiotherapy, Orthopedics & Neurology',
     description:
       'Chennai\'s trusted multi-clinic healthcare hub. Expert physiotherapy, orthopedic surgery, neurology & diabetes care across Velachery & Medavakkam.',
   },
@@ -116,10 +113,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // Add your Google Search Console verification code here
-    // google: 'your-google-verification-code',
-  },
+  verification: {},
   category: 'Healthcare',
 };
 
@@ -139,12 +133,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#0A192F] text-slate-100 antialiased font-sans">
-        <ScrollAnimations />
-        <Header />
-        <main className="flex-grow pt-24 md:pt-28">{children}</main>
-        <Footer />
-        <BackToTop />
-        <WhatsAppButton />
+        <PublicLayoutChrome>{children}</PublicLayoutChrome>
       </body>
     </html>
   );

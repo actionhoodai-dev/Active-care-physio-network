@@ -3,8 +3,8 @@ import ContactForm from '@/components/ui/ContactForm';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const metadata = {
-  title: 'Contact Us | Activecare Healthcare Network',
-  description: 'Get in touch with Activecare Physiotherapy Hospital Hub administration or reach associated clinics directly.',
+  title: 'Contact Us | Active Care Physiotherapy Centre',
+  description: 'Get in touch with Active Care Physiotherapy Centre administration or reach associated clinics directly.',
 };
 
 export default function ContactPage() {
@@ -15,10 +15,10 @@ export default function ContactPage() {
         <div className="bg-[#0F2440] text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl relative overflow-hidden border border-[rgba(100,200,255,0.12)]" data-animate="fade">
           <div className="max-w-2xl space-y-4">
             <span className="badge bg-[#0284C7] text-white text-xs font-bold uppercase tracking-wider font-[var(--font-body)]">
-              Mother Organization Contact
+              Centre Administration
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-[var(--font-heading)] leading-tight text-white">
-              Contact Activecare Hub
+              Contact Active Care Centre
             </h1>
             <p className="text-slate-300 text-base sm:text-lg font-[var(--font-body)]">
               Have questions regarding physical therapy sessions, orthopedic appointments, or clinic locations? We are here to assist.
@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6" data-animate="fade">
             <div className="bg-[#112240] rounded-3xl p-8 border border-[rgba(100,200,255,0.12)] shadow-xl space-y-6">
               <h2 className="text-xl font-bold font-[var(--font-heading)] text-white">
-                Central Hospital Hub Headquarters
+                Active Care Physiotherapy Centre Headquarters
               </h2>
 
               <div className="space-y-4">

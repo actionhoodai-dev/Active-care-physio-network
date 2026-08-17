@@ -35,7 +35,7 @@ export function generateLocalBusinessSchema(facility: Facility) {
     ],
     parentOrganization: {
       '@type': 'MedicalOrganization',
-      name: 'Activecare Healthcare Network',
+      name: 'Active Care Physiotherapy Centre',
       url: SITE_URL,
     },
     sameAs: [
@@ -66,10 +66,10 @@ export function generateMedicalOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalOrganization',
-    name: 'Activecare Healthcare Network',
-    alternateName: ['Activecare Physiotherapy', 'Active Care Physio', 'Activecare Hospital Hub'],
+    name: 'Active Care Physiotherapy Centre',
+    alternateName: ['Active Care Physiotherapy', 'Active Care Physio', 'Active Care Hospital Hub'],
     description:
-      'Activecare Healthcare Network is a centralized multi-clinic healthcare ecosystem in Chennai, Tamil Nadu connecting Activecare Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery) — offering physiotherapy, orthopedic care, neurology, diabetes management, and sports injury rehabilitation.',
+      'Active Care Physiotherapy Centre is a centralized multi-clinic healthcare ecosystem in Chennai, Tamil Nadu connecting Active Care Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery) — offering physiotherapy, orthopedic care, neurology, diabetes management, and sports injury rehabilitation.',
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     telephone: '+91 9884308186',
@@ -112,7 +112,7 @@ export function generateMedicalOrganizationSchema() {
     subOrganization: [
       {
         '@type': 'MedicalBusiness',
-        name: 'Activecare Physiotherapy & Sports Injury Clinic',
+        name: 'Active Care Physiotherapy & Sports Injury Clinic',
         url: 'https://activecarephysio.in/',
         telephone: '+91 9884308186',
         address: {

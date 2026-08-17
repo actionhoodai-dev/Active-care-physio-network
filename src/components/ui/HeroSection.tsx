@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, ShieldCheck, HeartPulse, Building2, Globe, ExternalLink, MapPin, Phone, Clock, Star } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Building2, Globe, MapPin, Phone, Clock, Star } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -18,8 +18,8 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-[var(--font-heading)] leading-tight text-white">
-              Activecare Physiotherapy <br className="hidden sm:inline" />
-              <span className="text-[#38BDF8]">&amp; Sports Injury Clinic</span>
+              Active Care <br className="hidden sm:inline" />
+              <span className="text-[#38BDF8]">Physiotherapy Centre</span>
             </h1>
 
             <p className="text-xl sm:text-2xl font-bold text-[#F59E0B] italic font-[var(--font-heading)]">
@@ -111,7 +111,7 @@ export default function HeroSection() {
                       </a>
                     </div>
                   </div>
-                  <h3 className="font-bold text-sm text-white">Activecare Physiotherapy &amp; Sports Injury Clinic</h3>
+                  <h3 className="font-bold text-sm text-white">Active Care Physiotherapy Centre</h3>
                   <p className="text-xs text-slate-300">Led by Dr. Senthil Nathan · 15+ Years Experience · 5000+ Patients</p>
                   <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#38BDF8]" /> +91 9884308186 / +91 88389 39754</p>
                 </div>

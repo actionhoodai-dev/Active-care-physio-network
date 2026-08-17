@@ -6,7 +6,7 @@ import GoogleMap from '@/components/ui/GoogleMap';
 import { getFacilities, getFacilityBySlug } from '@/lib/data';
 import { generateLocalBusinessSchema } from '@/lib/schema';
 import {
-  Building2, MapPin, Phone, Mail, Globe, ExternalLink, ChevronRight, CheckCircle2,
+  Building2, MapPin, Phone, Mail, ChevronRight, CheckCircle2,
   Stethoscope, ArrowLeft, Clock, User, CalendarClock, IndianRupee,
 } from 'lucide-react';
 
@@ -22,12 +22,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const facility = await getFacilityBySlug(slug);
-  if (!facility) return { title: 'Facility Not Found | Activecare Healthcare Network' };
+  if (!facility) return { title: 'Facility Not Found | Active Care Physiotherapy Centre' };
   return {
     title: `${facility.name} | ${facility.type}`,
     description: facility.description.slice(0, 160),
     openGraph: {
-      title: `${facility.name} - Activecare Healthcare Network`,
+      title: `${facility.name} - Active Care Physiotherapy Centre`,
       description: facility.description.slice(0, 160),
       images: facility.cover_image_url ? [facility.cover_image_url] : [],
     },
@@ -258,9 +258,9 @@ export default async function FacilityDetailPage({ params }: PageProps) {
               <div className="w-10 h-10 rounded-xl bg-[#0284C7] flex items-center justify-center">
                 <Building2 className="w-5 h-5 text-white" />
               </div>
-              <h4 className="font-bold text-base font-[var(--font-heading)]">Activecare Network Partner</h4>
+              <h4 className="font-bold text-base font-[var(--font-heading)]">Active Care Network Partner</h4>
               <p className="text-xs text-slate-300 leading-relaxed font-[var(--font-body)]">
-                This clinic operates under the Activecare Healthcare Network umbrella.
+                This clinic operates under the Active Care Physiotherapy Centre network umbrella.
               </p>
             </div>
           </div>

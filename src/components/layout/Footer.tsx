@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Globe, ExternalLink } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Globe, Shield } from 'lucide-react';
 import { seedFacilities } from '@/lib/seed-data';
 
 export default function Footer() {
@@ -12,14 +12,14 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center border border-slate-200">
-                <img src="/logo.png" alt="Activecare Emblem" className="w-full h-full object-contain" />
+                <img src="/logo.png" alt="Active Care Emblem" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold font-[var(--font-heading)] leading-tight text-white">
-                  Activecare
+                  Active Care
                 </span>
                 <span className="text-[0.6rem] font-bold text-sky-400 tracking-wider uppercase leading-none font-[var(--font-body)]">
-                  Physiotherapy &amp; Sports Injury
+                  Physiotherapy Centre
                 </span>
               </div>
             </Link>
@@ -40,6 +40,7 @@ export default function Footer() {
                 { name: 'Our Network', href: '/our-network' },
                 { name: 'Services', href: '/services' },
                 { name: 'Contact', href: '/contact' },
+                { name: 'Admin Portal', href: '/admin' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-sm text-slate-300 hover:text-amber-400 transition-colors duration-200">
@@ -138,9 +139,12 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-slate-400 font-[var(--font-body)]">
-            © {new Date().getFullYear()} Activecare Physiotherapy &amp; Sports Injury Clinic. All rights reserved.
+            © {new Date().getFullYear()} Active Care Physiotherapy Centre. All rights reserved.
           </p>
           <div className="flex items-center gap-4 font-[var(--font-body)]">
+            <Link href="/admin" className="text-xs text-slate-400 hover:text-[#38BDF8] flex items-center gap-1 transition-colors">
+              <Shield className="w-3 h-3" /> Admin
+            </Link>
             <Link href="#" className="text-xs text-slate-400 hover:text-slate-200 transition-colors">Privacy Policy</Link>
             <Link href="#" className="text-xs text-slate-400 hover:text-slate-200 transition-colors">Terms of Service</Link>
           </div>

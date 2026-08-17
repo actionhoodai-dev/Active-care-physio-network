@@ -2,7 +2,6 @@ import {
   Stethoscope,
   Bone,
   Activity,
-  HeartPulse,
   Zap,
   Dumbbell,
   Footprints,

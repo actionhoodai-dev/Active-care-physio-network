@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import HeroSection from '@/components/ui/HeroSection';
 import LocationsStrip from '@/components/ui/LocationsStrip';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -41,7 +40,7 @@ export default async function HomePage() {
     },
     {
       title: 'Multi-Clinic Integrated Network',
-      description: 'Seamless cross-referral between the main Activecare hub, DR. PAUL\'S ORTHO CLINIC for orthopedics, and Arunai Clinic for neurology & diabetes.',
+      description: 'Seamless cross-referral between Active Care Physiotherapy Centre, DR. PAUL\'S ORTHO CLINIC for orthopedics, and Arunai Clinic for neurology & diabetes.',
       icon: <Users2 className="w-6 h-6 text-[#818CF8]" />,
     },
   ];
@@ -61,10 +60,10 @@ export default async function HomePage() {
             <div className="lg:col-span-6 space-y-6" data-animate="fade">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#112240] border border-[#0284C7]/30 text-[#38BDF8] text-xs font-bold uppercase tracking-wider font-[var(--font-body)]">
                 <Building2 className="w-4 h-4" />
-                About the Hospital Hub
+                About Our Centre
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] text-white leading-tight">
-                Activecare Physiotherapy &amp; Sports Injury Clinic
+                Active Care Physiotherapy Centre
               </h2>
               <p className="text-slate-300 leading-relaxed text-base sm:text-lg font-[var(--font-body)]">
                 Our experienced and clinically versatile physiotherapists are immensely knowledgeable in clinical reasoning and hypothesizing clinical impressions. We provide world-class physiotherapy at clinic, home, or online — choose what works for you!
@@ -164,7 +163,7 @@ export default async function HomePage() {
       <section className="py-20 bg-[#0F2440] border-b border-[rgba(100,200,255,0.08)]" id="why-choose-us">
         <div className="container-custom">
           <SectionHeading
-            title="Why Choose Active Care Hospital Hub"
+            title="Why Choose Active Care Physiotherapy Centre"
             subtitle="Led by Dr. Senthil Nathan with 15+ years of clinical expertise and 5,000+ successfully treated patients."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -188,7 +187,7 @@ export default async function HomePage() {
                 Direct Contact &amp; Appointments
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-[var(--font-heading)] leading-tight text-white">
-                Contact Active Care Hospital Hub
+                Contact Active Care Physiotherapy Centre
               </h2>
               <p className="text-slate-300 text-base leading-relaxed font-[var(--font-body)]">
                 Book a physiotherapy session, get an orthopedic consultation, or request a home visit. Reach us by phone or email.

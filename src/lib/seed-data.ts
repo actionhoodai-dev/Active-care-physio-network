@@ -2,7 +2,7 @@ import type { Facility, Service } from '@/lib/types/database';
 
 export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[] = [
   {
-    name: 'Activecare Physiotherapy & Sports Injury Clinic',
+    name: 'Active Care Physiotherapy & Sports Injury Clinic',
     slug: 'active-care-physiotherapy-center',
     type: 'Physiotherapy & Sports Injury Clinic',
     tagline: 'Your Pain Stops Here',
@@ -101,7 +101,7 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
     type: 'Speciality Centre for Neurological Diseases & Diabetes',
     tagline: 'Speciality Centre for Neurological Diseases & Diabetes',
     description:
-      'Arunai Clinic is a specialized healthcare clinic dedicated to expert diagnosis, treatment, and ongoing care for Neurological Diseases and Diabetes. We offer comprehensive diabetic management, nerve health evaluations, preventive health check-ups, and outpatient medical care under Activecare network standards.',
+      'Arunai Clinic is a specialized healthcare clinic dedicated to expert diagnosis, treatment, and ongoing care for Neurological Diseases and Diabetes. We offer comprehensive diabetic management, nerve health evaluations, preventive health check-ups, and outpatient medical care under Active Care network standards.',
     website_url: null,
     google_business_url: 'https://maps.app.goo.gl/adgaBELxiT8XLhxRA',
     phone: '+91 9884122274',

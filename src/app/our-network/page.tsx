@@ -1,11 +1,10 @@
-import SectionHeading from '@/components/ui/SectionHeading';
 import FacilityCard from '@/components/ui/FacilityCard';
 import { getFacilities } from '@/lib/data';
 import { Building2 } from 'lucide-react';
 
 export const metadata = {
-  title: 'Our Healthcare Network Directory | Activecare',
-  description: 'Explore all 3 associated clinics under Activecare Physiotherapy Hospital Hub with phone numbers, addresses, maps, and direct official site links.',
+  title: 'Our Healthcare Network Directory | Active Care Physiotherapy Centre',
+  description: 'Explore all 3 associated clinics under Active Care Physiotherapy Centre with phone numbers, addresses, maps, and direct official site links.',
 };
 
 export default async function OurNetworkPage() {
@@ -24,7 +23,7 @@ export default async function OurNetworkPage() {
               Associated Clinics &amp; Centers
             </h1>
             <p className="text-slate-300 text-base sm:text-lg font-[var(--font-body)]">
-              Explore full profiles for Activecare Physiotherapy &amp; Sports Injury Clinic (Main Hub), DR. PAUL&apos;S ORTHO CLINIC, and Arunai Clinic with complete addresses, contact numbers, maps, and website redirect buttons.
+              Explore full profiles for Active Care Physiotherapy Centre (Main Hub), DR. PAUL&apos;S ORTHO CLINIC, and Arunai Clinic with complete addresses, contact numbers, maps, and website redirect buttons.
             </p>
           </div>
         </div>
@@ -34,7 +33,7 @@ export default async function OurNetworkPage() {
           <div className="flex items-center justify-between border-b border-[rgba(100,200,255,0.08)] pb-4" data-animate="fade">
             <h2 className="text-xl font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
               <Building2 className="w-5 h-5 text-[#38BDF8]" />
-              Activecare Network Clinics ({facilities.length})
+              Active Care Network Clinics ({facilities.length})
             </h2>
           </div>
 
