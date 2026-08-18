@@ -36,16 +36,14 @@ export default function HeroSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
-              <a
-                href="https://activecarephysio.in/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="btn-primary text-base font-bold !py-3.5 !px-6"
-                id="hero-main-website"
+                id="hero-book-appointment"
               >
-                <Globe className="w-5 h-5" />
-                Visit Website
-              </a>
+                <Phone className="w-5 h-5" />
+                Book Appointment
+              </Link>
               <a
                 href="https://g.page/r/CfexJGCWGVtmEBM/review"
                 target="_blank"
@@ -124,9 +122,6 @@ export default function HeroSection() {
                     <div className="flex items-center gap-2">
                       <a href="https://maps.google.com/?q=Active+Care+Physiotherapy+Center,+Velachery,+Chennai" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-[#F59E0B] hover:underline flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5" /> Map Location
-                      </a>
-                      <a href="https://activecarephysio.in/" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-[#38BDF8] hover:underline flex items-center gap-1">
-                        <Globe className="w-3.5 h-3.5" /> Site
                       </a>
                     </div>
                   </div>

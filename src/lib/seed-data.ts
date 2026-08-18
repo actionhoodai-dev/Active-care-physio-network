@@ -2,14 +2,14 @@ import type { Facility, Service } from '@/lib/types/database';
 
 export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[] = [
   {
-    name: 'Active Care Physiotherapy & Sports Injury Clinic',
+    name: 'Active Care Physiotherapy Centre',
     slug: 'active-care-physiotherapy-center',
-    type: 'Physiotherapy & Sports Injury Clinic',
+    type: 'Physiotherapy Centre',
     tagline: 'Get Back Your Active Lifestyle',
     description:
       'A fully equipped center for effective physiotherapy treatments. Our experienced and clinically versatile physiotherapists are immensely knowledgeable in clinical reasoning and hypothesizing clinical impressions. We offer world-class physiotherapy at clinic, home, or online — choose what works for you!',
-    website_url: 'https://activecarephysio.in/',
-    google_business_url: 'https://activecarephysio.in/',
+    website_url: null,
+    google_business_url: null,
     phone: '+91 9884308186',
     phone_secondary: null,
     email: 'ActiveCarePhysio22@gmail.com',

@@ -68,7 +68,7 @@ export function generateMedicalOrganizationSchema() {
     name: 'Active Care Physiotherapy Centre',
     alternateName: ['Active Care Physiotherapy', 'Active Care Physio', 'Active Care Hospital Hub'],
     description:
-      'Active Care Physiotherapy Centre is a centralized multi-clinic healthcare ecosystem in Chennai, Tamil Nadu connecting Active Care Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery) — offering physiotherapy, orthopedic care, neurology, diabetes management, and sports injury rehabilitation.',
+      'Active Care Physiotherapy Centre is a centralized multi-clinic healthcare ecosystem in Chennai, Tamil Nadu connecting Active Care Physiotherapy Centre (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery) — offering physiotherapy, orthopedic care, neurology, diabetes management, and sports injury rehabilitation.',
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     telephone: '+91 9884308186',
@@ -104,8 +104,8 @@ export function generateMedicalOrganizationSchema() {
     subOrganization: [
       {
         '@type': 'MedicalBusiness',
-        name: 'Active Care Physiotherapy & Sports Injury Clinic',
-        url: 'https://activecarephysio.in/',
+        name: 'Active Care Physiotherapy Centre',
+        url: `${SITE_URL}/facility/active-care-physiotherapy-center`,
         telephone: '+91 9884308186',
         address: {
           '@type': 'PostalAddress',
@@ -155,7 +155,6 @@ export function generateMedicalOrganizationSchema() {
       'Diabetes Management',
     ],
     sameAs: [
-      'https://activecarephysio.in/',
       'https://drpaulsorthoclinic.com/',
       'https://maps.app.goo.gl/adgaBELxiT8XLhxRA',
     ],

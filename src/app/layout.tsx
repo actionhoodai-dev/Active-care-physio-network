@@ -32,12 +32,11 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    'Active Care Physiotherapy Centre — Get back your active lifestyle with Chennai\'s trusted multi-clinic healthcare network connecting Active Care Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. A. Ashok kumar (PT) MPT.(Neuro.), M.I.A.P. Senior Physiotherapist (Reg No.: LA-39552). Book appointments: +91 9884308186.',
+    'Active Care Physiotherapy Centre — Get back your active lifestyle with Chennai\'s trusted multi-clinic healthcare network connecting Active Care Physiotherapy Centre (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. A. Ashok kumar (PT) MPT.(Neuro.), M.I.A.P. Senior Physiotherapist (Reg No.: LA-39552). Book appointments: +91 9884308186.',
   keywords: [
     // Brand Names
     'Active Care Physiotherapy Centre',
     'Active Care Physiotherapy',
-    'Active Care Physiotherapy & Sports Injury Clinic',
     'Active Care Physio Velachery',
     'Active Care Physio',
     'DR PAUL ORTHO CLINIC',
