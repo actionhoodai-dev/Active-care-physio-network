@@ -92,7 +92,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Active Care Physiotherapy Centre | Physiotherapy, Orthopedics & Neurology | Velachery & Medavakkam, Chennai',
     description:
-      'Chennai\'s trusted multi-clinic healthcare hub — Active Care Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 1 Lakh+ patients treated.',
+      'Chennai\'s trusted multi-clinic healthcare hub — Active Care Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 10,00,000+ patients treated.',
     url: '/',
     siteName: 'Active Care Physiotherapy Centre',
     locale: 'en_IN',

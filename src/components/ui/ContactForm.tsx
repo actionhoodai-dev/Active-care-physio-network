@@ -59,7 +59,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             type="tel"
             id="contact-form-phone"
             className="form-input"
-            placeholder="+91 88389 39754"
+            placeholder="+91 9884308186"
             required
           />
         </div>

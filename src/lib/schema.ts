@@ -81,13 +81,6 @@ export function generateMedicalOrganizationSchema() {
         areaServed: 'IN',
         availableLanguage: ['English', 'Tamil'],
       },
-      {
-        '@type': 'ContactPoint',
-        telephone: '+91 8838939754',
-        contactType: 'appointments',
-        areaServed: 'IN',
-        availableLanguage: ['English', 'Tamil'],
-      },
     ],
     address: {
       '@type': 'PostalAddress',
@@ -128,7 +121,7 @@ export function generateMedicalOrganizationSchema() {
         '@type': 'MedicalBusiness',
         name: "DR.PAUL'S ORTHO CLINIC",
         url: 'https://drpaulsorthoclinic.com/',
-        telephone: '+91 8838939754',
+        telephone: '+91 9884308186',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Plot no 16, Ramaiah Nagar, Medavakkam',
@@ -142,7 +135,7 @@ export function generateMedicalOrganizationSchema() {
       {
         '@type': 'MedicalBusiness',
         name: 'Arunai Clinic',
-        telephone: '+91 9884122274',
+        telephone: '+91 9884308186',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Latha Illam, TNHB Main Rd, TNHB Colony, Velachery',

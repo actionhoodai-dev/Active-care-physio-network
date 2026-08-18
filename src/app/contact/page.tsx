@@ -71,7 +71,6 @@ export default function ContactPage() {
                   <div className="font-[var(--font-body)]">
                     <p className="text-xs text-slate-400 font-bold uppercase">Phone Lines</p>
                     <a href="tel:+919884308186" className="text-sm font-bold text-slate-200 hover:text-[#38BDF8] transition-colors block">+91 9884308186</a>
-                    <a href="tel:+918838939754" className="text-sm font-bold text-slate-200 hover:text-[#38BDF8] transition-colors block">+91 88389 39754</a>
                   </div>
                 </div>
 

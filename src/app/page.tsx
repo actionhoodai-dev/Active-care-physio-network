@@ -115,8 +115,6 @@ export default async function HomePage() {
                 <div className="pt-2 flex items-center gap-3 text-sm font-[var(--font-body)]">
                   <Phone className="w-4 h-4 text-[#38BDF8]" />
                   <a href="tel:+919884308186" className="font-bold text-slate-200 hover:text-[#38BDF8] transition-colors">+91 9884308186</a>
-                  <span className="text-slate-600">|</span>
-                  <a href="tel:+918838939754" className="font-bold text-slate-200 hover:text-[#38BDF8] transition-colors">+91 88389 39754</a>
                 </div>
               </div>
             </div>
@@ -155,7 +153,7 @@ export default async function HomePage() {
         <div className="container-custom">
           <SectionHeading
             title="Why Choose Active Care Physiotherapy Centre"
-            subtitle="Led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P., Reg No.: LA-39552) with 15+ years of clinical expertise and 1 Lakh+ successfully treated patients."
+            subtitle="Led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P., Reg No.: LA-39552) with 15+ years of clinical expertise and 10,00,000+ successfully treated patients."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUsPoints.map((item, idx) => (
@@ -195,7 +193,6 @@ export default async function HomePage() {
                   <div className="font-[var(--font-body)]">
                     <p className="text-xs text-slate-400 uppercase tracking-wider font-bold">Phone Lines</p>
                     <p className="text-sm font-bold text-white">+91 9884308186</p>
-                    <p className="text-sm font-bold text-white">+91 88389 39754</p>
                   </div>
                 </div>
 

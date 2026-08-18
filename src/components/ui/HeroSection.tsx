@@ -73,7 +73,6 @@ export default function HeroSection() {
                 <div className="text-xs font-[var(--font-body)]">
                   <p className="font-bold text-white">Phone Lines</p>
                   <p className="text-slate-300 mt-0.5">+91 9884308186</p>
-                  <p className="text-slate-300">+91 88389 39754</p>
                 </div>
               </div>
               <div className="p-3.5 rounded-xl bg-[#112240] border border-[rgba(100,200,255,0.08)] shadow-sm flex items-start gap-3">
@@ -133,7 +132,7 @@ export default function HeroSection() {
                   </div>
                   <h3 className="font-bold text-sm text-white">Active Care Physiotherapy Centre</h3>
                   <p className="text-xs text-slate-300">Led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P.) · Senior Physiotherapist</p>
-                  <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#38BDF8]" /> +91 9884308186 / +91 88389 39754</p>
+                  <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#38BDF8]" /> +91 9884308186</p>
                 </div>
 
                 {/* Branch 1 */}
@@ -151,7 +150,7 @@ export default function HeroSection() {
                   </div>
                   <h3 className="font-bold text-sm text-white">DR. PAUL&apos;S ORTHO CLINIC</h3>
                   <p className="text-xs text-slate-300">Orthopedic surgery, physiotherapy rehab, fracture care, joint &amp; spine therapy.</p>
-                  <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#F59E0B]" /> +91 8838939754 / +91 9344674737</p>
+                  <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#F59E0B]" /> +91 9884308186</p>
                 </div>
 
                 {/* Branch 2 */}
@@ -166,7 +165,7 @@ export default function HeroSection() {
                   </div>
                   <h3 className="font-bold text-sm text-white">Arunai Clinic</h3>
                   <p className="text-xs text-slate-300">Neurological diseases, diabetes management &amp; outpatient care.</p>
-                  <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#2DD4BF]" /> +91 9884122274</p>
+                  <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#2DD4BF]" /> +91 9884308186</p>
                 </div>
               </div>
 
@@ -201,11 +200,11 @@ export default function HeroSection() {
             </p>
           </a>
           <div className="space-y-1">
-            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#2DD4BF]">1 Lakh+</p>
+            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#2DD4BF]">10,00,000+</p>
             <p className="text-xs text-slate-400 font-bold font-[var(--font-body)]">Happy Patients Treated</p>
           </div>
           <div className="space-y-1">
-            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#38BDF8]">10,000+</p>
+            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#38BDF8]">50,000+</p>
             <p className="text-xs text-slate-400 font-bold font-[var(--font-body)]">New Visits Every Year</p>
           </div>
         </div>
