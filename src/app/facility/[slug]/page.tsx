@@ -3,11 +3,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ContactButton from '@/components/ui/ContactButton';
 import GoogleMap from '@/components/ui/GoogleMap';
+import ReviewsSection from '@/components/ui/ReviewsSection';
 import { getFacilities, getFacilityBySlug } from '@/lib/data';
 import { generateLocalBusinessSchema } from '@/lib/schema';
 import {
   Building2, MapPin, Phone, Mail, ChevronRight, CheckCircle2,
-  Stethoscope, ArrowLeft, Clock, User, CalendarClock, ExternalLink,
+  Stethoscope, ArrowLeft, Clock, User, CalendarClock, ExternalLink, Star,
 } from 'lucide-react';
 
 interface PageProps {
@@ -105,8 +106,20 @@ export default async function FacilityDetailPage({ params }: PageProps) {
                 className="btn-accent text-sm font-bold justify-center !py-3 !px-5 shadow-lg"
               >
                 <MapPin className="w-4 h-4" />
-                <span>Google Maps / Profile</span>
+                <span>Google Maps</span>
               </a>
+              {facility.google_review_url && (
+                <a
+                  href={facility.google_review_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#F59E0B]/20 hover:bg-[#F59E0B]/30 text-[#FCD34D] border border-[#F59E0B]/50 hover:border-[#F59E0B] font-bold text-sm shadow-lg transition-all"
+                  id="facility-google-review"
+                >
+                  <Star className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
+                  <span>Review on Google</span>
+                </a>
+              )}
               <ContactButton websiteUrl={facility.website_url} googleBusinessUrl={facility.google_business_url} size="lg" className="shadow-lg" />
             </div>
           </div>
@@ -124,7 +137,7 @@ export default async function FacilityDetailPage({ params }: PageProps) {
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-8 space-y-8">
             {/* Overview */}
             <div className="bg-[#112240] rounded-2xl p-6 sm:p-8 border border-[rgba(100,200,255,0.08)] shadow-sm space-y-4" data-animate="fade">
@@ -295,6 +308,13 @@ export default async function FacilityDetailPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        {/* Verified Google Patient Reviews for Active Care */}
+        {facility.slug === 'active-care-physiotherapy-center' && (
+          <div className="mt-16">
+            <ReviewsSection />
+          </div>
+        )}
       </div>
     </div>
   );

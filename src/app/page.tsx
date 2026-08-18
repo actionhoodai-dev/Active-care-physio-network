@@ -4,6 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import FacilityCard from '@/components/ui/FacilityCard';
 import LiveServicesGrid from '@/components/ui/LiveServicesGrid';
 import ContactForm from '@/components/ui/ContactForm';
+import ReviewsSection from '@/components/ui/ReviewsSection';
 import { getFacilities, getServices } from '@/lib/data';
 import {
   Building2,
@@ -24,8 +25,8 @@ export default async function HomePage() {
 
   const whyChooseUsPoints = [
     {
-      title: 'Dr. Senthil Nathan — 15+ Years',
-      description: 'Led by Dr. Senthil Nathan with over 15 years of clinical expertise in musculoskeletal physiotherapy and sports injury rehabilitation.',
+      title: 'Dr. A. Ashok kumar — Senior Physiotherapist',
+      description: 'Led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P., Reg No.: LA-39552) with over 15 years of clinical expertise in neuro physiotherapy, musculoskeletal rehabilitation, and sports injuries.',
       icon: <Stethoscope className="w-6 h-6 text-[#38BDF8]" />,
     },
     {
@@ -154,7 +155,7 @@ export default async function HomePage() {
         <div className="container-custom">
           <SectionHeading
             title="Why Choose Active Care Physiotherapy Centre"
-            subtitle="Led by Dr. Senthil Nathan with 15+ years of clinical expertise and 5,000+ successfully treated patients."
+            subtitle="Led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P., Reg No.: LA-39552) with 15+ years of clinical expertise and 1 Lakh+ successfully treated patients."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {whyChooseUsPoints.map((item, idx) => (
@@ -168,7 +169,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 6. CONTACT */}
+      {/* 6. VERIFIED PATIENT REVIEWS */}
+      <ReviewsSection />
+
+      {/* 7. CONTACT */}
       <section className="py-20 bg-[#0A192F]" id="contact">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

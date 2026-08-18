@@ -67,8 +67,8 @@ function AdminShell({ children }: { children: React.ReactNode }) {
         <div className="space-y-6">
           {/* Logo & Portal title */}
           <Link href="/admin" className="flex items-center gap-3 px-2 py-1 group">
-            <div className="w-10 h-10 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-md border border-slate-200">
-              <img src="/logo.png" alt="Active Care Logo" className="w-full h-full object-contain" />
+            <div className="w-10 h-10 rounded-full bg-white p-0.5 flex items-center justify-center shadow-md border border-slate-200 overflow-hidden shrink-0">
+              <img src="/logo.png" alt="Active Care Logo" className="w-full h-full object-contain rounded-full" />
             </div>
             <div>
               <h2 className="text-sm font-bold text-white font-[var(--font-heading)] leading-tight">
@@ -148,8 +148,8 @@ function AdminShell({ children }: { children: React.ReactNode }) {
       {/* Mobile Header Bar */}
       <header className="md:hidden bg-[#0F2440] border-b border-[rgba(100,200,255,0.08)] p-4 flex items-center justify-between sticky top-0 z-40">
         <Link href="/admin" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-lg bg-white p-1 flex items-center justify-center shadow">
-            <img src="/logo.png" alt="Active Care" className="w-full h-full object-contain" />
+          <div className="w-9 h-9 rounded-full bg-white p-0.5 flex items-center justify-center shadow overflow-hidden">
+            <img src="/logo.png" alt="Active Care" className="w-full h-full object-contain rounded-full" />
           </div>
           <div>
             <h2 className="text-sm font-bold text-white leading-tight">Active Care</h2>

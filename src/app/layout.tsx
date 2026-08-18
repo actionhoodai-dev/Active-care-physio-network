@@ -19,11 +19,20 @@ const lora = Lora({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://activecarephysio.in'),
   title: {
-    default: 'Active Care Physiotherapy Centre | Velachery, Chennai',
+    default: 'Active Care Physiotherapy Centre | Get Back Your Active Lifestyle | Velachery, Chennai',
     template: '%s | Active Care Physiotherapy Centre',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icon.png' },
+    ],
+  },
   description:
-    'Active Care Physiotherapy Centre — Chennai\'s trusted multi-clinic healthcare network connecting Active Care Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. Senthil Nathan (15+ years). Book appointments: +91 9884308186.',
+    'Active Care Physiotherapy Centre — Get back your active lifestyle with Chennai\'s trusted multi-clinic healthcare network connecting Active Care Physiotherapy & Sports Injury Clinic (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), and Arunai Clinic (Velachery). Expert physiotherapy, orthopedic surgery, neurology & diabetes care. Led by Dr. A. Ashok kumar (PT) MPT.(Neuro.), M.I.A.P. Senior Physiotherapist (Reg No.: LA-39552). Book appointments: +91 9884308186.',
   keywords: [
     // Brand Names
     'Active Care Physiotherapy Centre',
@@ -37,8 +46,9 @@ export const metadata: Metadata = {
     'Arunai Clinic',
     'Arunai Clinic Velachery',
     // Doctor Names
-    'Dr Senthil Nathan Physiotherapy',
-    'Dr Senthil Nathan Velachery',
+    'Dr A Ashok kumar Physiotherapist',
+    'Dr Ashok kumar Physiotherapy',
+    'Dr Ashok kumar Velachery',
     'Dr Paul Orthopedic',
     'Dr Paul Ortho Medavakkam',
     // Services + Location
@@ -72,7 +82,7 @@ export const metadata: Metadata = {
   ],
   authors: [
     { name: 'Active Care Physiotherapy Centre' },
-    { name: 'Dr. Senthil Nathan' },
+    { name: 'Dr. A. Ashok kumar' },
   ],
   creator: 'Active Care Physiotherapy Centre',
   publisher: 'Active Care Physiotherapy Centre',
@@ -82,7 +92,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Active Care Physiotherapy Centre | Physiotherapy, Orthopedics & Neurology | Velachery & Medavakkam, Chennai',
     description:
-      'Chennai\'s trusted multi-clinic healthcare hub — Active Care Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 5000+ patients treated.',
+      'Chennai\'s trusted multi-clinic healthcare hub — Active Care Physiotherapy (Velachery), DR. PAUL\'S ORTHO CLINIC (Medavakkam), Arunai Clinic (Velachery). Expert physiotherapy, orthopedic, neurology & diabetes care. 15+ years experience. 1 Lakh+ patients treated.',
     url: '/',
     siteName: 'Active Care Physiotherapy Centre',
     locale: 'en_IN',
@@ -125,14 +135,14 @@ export default function RootLayout({
   const orgSchema = generateMedicalOrganizationSchema();
 
   return (
-    <html lang="en" className={`${openSans.variable} ${lora.variable}`}>
+    <html lang="en" className={`${openSans.variable} ${lora.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#0A192F] text-slate-100 antialiased font-sans">
+      <body className="min-h-screen flex flex-col bg-[#0A192F] text-slate-100 antialiased font-sans" suppressHydrationWarning>
         <PublicLayoutChrome>{children}</PublicLayoutChrome>
       </body>
     </html>

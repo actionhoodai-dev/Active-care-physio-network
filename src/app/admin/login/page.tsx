@@ -52,8 +52,8 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md relative z-10 space-y-6">
         {/* Header Branding */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white p-2 shadow-xl border border-slate-200 mb-2">
-            <img src="/logo.png" alt="Active Care Logo" className="w-full h-full object-contain" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white p-1 shadow-xl border border-slate-200 mb-2 overflow-hidden">
+            <img src="/logo.png" alt="Active Care Logo" className="w-full h-full object-contain rounded-full" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold font-[var(--font-heading)] text-white">
             Active Care Admin Portal

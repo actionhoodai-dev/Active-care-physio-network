@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, MapPin } from 'lucide-react';
+import { Menu, X, MapPin, Star } from 'lucide-react';
 import { seedFacilities } from '@/lib/seed-data';
 
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Our Network', href: '/our-network' },
   { name: 'Services', href: '/services' },
+  { name: 'Reviews', href: '/#patient-reviews' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -93,32 +94,44 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group" id="header-logo">
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-white p-1 flex items-center justify-center border border-slate-200 shadow-sm group-hover:border-[#0284C7] transition-all">
-              <img src="/logo.png" alt="Active Care Physiotherapy Centre Emblem" className="w-full h-full object-contain" />
+          <Link href="/" className="flex items-center gap-3 group" id="header-logo">
+            <div className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white p-0.5 flex items-center justify-center border border-slate-200/80 shadow-md group-hover:border-[#0284C7] group-hover:shadow-lg transition-all shrink-0 overflow-hidden">
+              <img src="/logo.png" alt="Active Care Physiotherapy Centre Logo" className="w-full h-full object-contain rounded-full" />
             </div>
             <div className="flex flex-col">
               <span className="text-base md:text-lg font-bold font-[var(--font-heading)] text-white leading-tight">
                 Active Care
               </span>
-              <span className="text-[0.55rem] md:text-[0.6rem] font-bold text-[#0284C7] tracking-wider uppercase leading-none font-[var(--font-body)]">
+              <span className="text-[0.55rem] md:text-[0.6rem] font-bold text-[#38BDF8] tracking-wider uppercase leading-none font-[var(--font-body)]">
                 Physiotherapy Centre
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1" id="desktop-nav">
+          <nav className="hidden md:flex items-center gap-2" id="desktop-nav">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="px-4 py-2 text-[0.9375rem] font-bold text-slate-300 hover:text-white hover:bg-[#112240] rounded-lg transition-all duration-200 font-[var(--font-body)]"
+                className="px-3.5 py-2 text-[0.9375rem] font-bold text-slate-300 hover:text-white hover:bg-[#112240] rounded-lg transition-all duration-200 font-[var(--font-body)]"
                 id={`nav-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {link.name}
               </Link>
             ))}
+
+            <a
+              href="https://g.page/r/CfexJGCWGVtmEBM/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#F59E0B]/15 hover:bg-[#F59E0B]/25 text-[#FCD34D] border border-[#F59E0B]/40 hover:border-[#F59E0B] text-xs font-bold transition-all shadow-sm"
+              id="header-google-review"
+              title="Review us on Google"
+            >
+              <Star className="w-3.5 h-3.5 fill-[#F59E0B] text-[#F59E0B]" />
+              <span>Review Us</span>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -143,18 +156,29 @@ export default function Header() {
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-[#0F2440] border-t border-[rgba(100,200,255,0.08)] px-6 py-4 space-y-1 shadow-lg">
+        <div className="bg-[#0F2440] border-t border-[rgba(100,200,255,0.08)] px-6 py-4 space-y-2 shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="block px-4 py-3 text-[0.9375rem] font-bold text-slate-300 hover:text-white hover:bg-[#112240] rounded-lg transition-all font-[var(--font-body)]"
+              className="block px-4 py-2.5 text-[0.9375rem] font-bold text-slate-300 hover:text-white hover:bg-[#112240] rounded-lg transition-all font-[var(--font-body)]"
               id={`mobile-nav-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {link.name}
             </Link>
           ))}
+          <a
+            href="https://g.page/r/CfexJGCWGVtmEBM/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#F59E0B]/20 text-[#FCD34D] border border-[#F59E0B]/40 font-bold text-sm transition-all"
+            id="mobile-google-review"
+          >
+            <Star className="w-4 h-4 fill-[#F59E0B] text-[#F59E0B]" />
+            <span>Review Active Care on Google</span>
+          </a>
         </div>
       </div>
     </header>

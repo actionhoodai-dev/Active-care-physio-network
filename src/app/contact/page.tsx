@@ -1,6 +1,6 @@
 import GoogleMap from '@/components/ui/GoogleMap';
 import ContactForm from '@/components/ui/ContactForm';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Star } from 'lucide-react';
 
 export const metadata = {
   title: 'Contact Us | Active Care Physiotherapy Centre',
@@ -26,7 +26,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Form Column */}
           <div className="lg:col-span-7 bg-[#112240] rounded-3xl p-8 border border-[rgba(100,200,255,0.12)] shadow-xl space-y-6" data-animate="scale">
             <h2 className="text-2xl font-bold font-[var(--font-heading)] text-white">
@@ -37,6 +37,27 @@ export default function ContactPage() {
 
           {/* Info Column */}
           <div className="lg:col-span-5 space-y-6" data-animate="fade">
+            {/* Google Review Card */}
+            <div className="bg-gradient-to-br from-[#112240] to-[#1A365D] rounded-3xl p-6 border border-[#F59E0B]/30 shadow-xl space-y-3">
+              <div className="flex items-center gap-2 text-[#FCD34D] font-bold">
+                <Star className="w-5 h-5 fill-[#F59E0B] text-[#F59E0B]" />
+                <span className="text-base font-[var(--font-heading)]">Visited Active Care Recently?</span>
+              </div>
+              <p className="text-xs text-slate-300 font-[var(--font-body)] leading-relaxed">
+                Your feedback helps others choose quality physiotherapy care. Please take a moment to share your experience on Google!
+              </p>
+              <a
+                href="https://g.page/r/CfexJGCWGVtmEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-[#F59E0B] hover:bg-[#D97706] text-[#0A192F] font-extrabold text-sm transition-all shadow-md"
+                id="contact-google-review"
+              >
+                <Star className="w-4 h-4 fill-[#0A192F] text-[#0A192F]" />
+                <span>Write a Google Review</span>
+              </a>
+            </div>
+
             <div className="bg-[#112240] rounded-3xl p-8 border border-[rgba(100,200,255,0.12)] shadow-xl space-y-6">
               <h2 className="text-xl font-bold font-[var(--font-heading)] text-white">
                 Active Care Physiotherapy Centre Headquarters

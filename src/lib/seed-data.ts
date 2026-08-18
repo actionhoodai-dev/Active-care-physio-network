@@ -5,7 +5,7 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
     name: 'Active Care Physiotherapy & Sports Injury Clinic',
     slug: 'active-care-physiotherapy-center',
     type: 'Physiotherapy & Sports Injury Clinic',
-    tagline: 'Your Pain Stops Here',
+    tagline: 'Get Back Your Active Lifestyle',
     description:
       'A fully equipped center for effective physiotherapy treatments. Our experienced and clinically versatile physiotherapists are immensely knowledgeable in clinical reasoning and hypothesizing clinical impressions. We offer world-class physiotherapy at clinic, home, or online — choose what works for you!',
     website_url: 'https://activecarephysio.in/',
@@ -16,9 +16,9 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
     address: '938, MIG 938, 1st Main Rd, near Lakshmi super market, TamilNadu Housing Board Colony, Periyar Nagar, Velachery, Chennai, Greater Chennai, Tamil Nadu 600042',
     city: 'Chennai',
     state: 'Tamil Nadu',
-    logo_url: '/active-care-banner.png',
-    cover_image_url: '/active-care-banner.png',
-    doctor_name: 'Dr. Senthil Nathan',
+    logo_url: '/logo.png',
+    cover_image_url: '/logo.png',
+    doctor_name: 'Dr. A. Ashok kumar. (PT) MPT.(Neuro.), M.I.A.P. (Senior Physiotherapist | Reg No.: LA-39552)',
     opening_hours: {
       monday: '10 AM – 1 PM, 4 PM – 8 PM',
       tuesday: '10 AM – 1 PM, 4 PM – 8 PM',
@@ -32,8 +32,8 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
     stats: [
       { value: '15+', label: 'Years of Experience' },
       { value: '5★', label: 'Star Rated Physiotherapist' },
-      { value: '5000+', label: 'Happy Patients Treated' },
-      { value: '800+', label: 'New Visits Every Year' },
+      { value: '1 Lakh+', label: 'Happy Patients Treated' },
+      { value: '10,000+', label: 'New Visits Every Year' },
     ],
     social_links: {
       facebook: 'https://facebook.com',
@@ -42,6 +42,7 @@ export const seedFacilities: Omit<Facility, 'id' | 'created_at' | 'updated_at'>[
       instagram: null,
     },
     google_maps_url: 'https://maps.google.com/?q=Active+Care+Physiotherapy+Center,+Velachery,+Chennai',
+    google_review_url: 'https://g.page/r/CfexJGCWGVtmEBM/review',
     map_embed_url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7081937303064!2d80.21003507025628!3d12.99050648647958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f131c82665%3A0x665b19966024b1f7!2sActive%20Care%20Physiotherapy%20Center!5e0!3m2!1sen!2sin!4v1786561199448!5m2!1sen!2sin',
   },
   {

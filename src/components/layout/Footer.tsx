@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Globe, Star } from 'lucide-react';
 import { seedFacilities } from '@/lib/seed-data';
 
 export default function Footer() {
@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center border border-slate-200">
-                <img src="/logo.png" alt="Active Care Emblem" className="w-full h-full object-contain" />
+            <Link href="/" className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-white p-0.5 flex items-center justify-center border border-slate-200/80 shadow-md shrink-0 overflow-hidden">
+                <img src="/logo.png" alt="Active Care Physiotherapy Centre Emblem" className="w-full h-full object-contain rounded-full" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold font-[var(--font-heading)] leading-tight text-white">
@@ -24,9 +24,21 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-slate-300 leading-relaxed mt-4 font-[var(--font-body)]">
-              A fully equipped center for effective physiotherapy treatments led by Dr. Senthil Nathan. World-class physiotherapy at clinic, home, or online.
+              A fully equipped center for effective physiotherapy treatments led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P., Reg No.: LA-39552). World-class physiotherapy at clinic, home, or online.
             </p>
-            <p className="text-sm font-bold text-amber-400 italic mt-3 font-[var(--font-heading)]">&ldquo;Your Pain Stops Here&rdquo;</p>
+            <p className="text-sm font-extrabold text-[#38BDF8] tracking-wide font-[var(--font-heading)] mt-3.5">&ldquo;Get Back Your Active Lifestyle&rdquo;</p>
+            <div className="mt-5 pt-3 border-t border-[rgba(100,200,255,0.08)]">
+              <a
+                href="https://g.page/r/CfexJGCWGVtmEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#112240] hover:bg-[#1A365D] border border-amber-500/40 hover:border-amber-400 text-amber-300 text-xs font-bold transition-all shadow-sm group"
+                id="footer-google-review"
+              >
+                <Star className="w-4 h-4 fill-amber-400 text-amber-400 group-hover:scale-110 transition-transform" />
+                <span>Review Us on Google (5.0★)</span>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -39,6 +51,7 @@ export default function Footer() {
                 { name: 'Home', href: '/' },
                 { name: 'Our Network', href: '/our-network' },
                 { name: 'Services', href: '/services' },
+                { name: 'Patient Reviews', href: '/#patient-reviews' },
                 { name: 'Contact', href: '/contact' },
               ].map((link) => (
                 <li key={link.name}>

@@ -29,6 +29,7 @@ export interface Facility {
   social_links: SocialLinks | null;
   consultations?: ConsultationOption[] | null;
   google_maps_url?: string | null;
+  google_review_url?: string | null;
   map_embed_url?: string | null;
   created_at?: string;
   updated_at?: string;

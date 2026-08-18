@@ -22,32 +22,46 @@ export default function HeroSection() {
               <span className="text-[#38BDF8]">Physiotherapy Centre</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl font-bold text-[#F59E0B] italic font-[var(--font-heading)]">
-              &ldquo;Your Pain Stops Here&rdquo;
-            </p>
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#0284C7]/20 via-[#0D9488]/20 to-[#0284C7]/20 border border-[#38BDF8]/40 shadow-sm">
+                <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#38BDF8] font-[var(--font-heading)]">
+                  Get Back Your Active Lifestyle
+                </span>
+              </div>
+            </div>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-[var(--font-body)]">
-              A fully equipped center for effective physiotherapy treatments led by <strong className="text-white">Dr. Senthil Nathan</strong>. World-class physiotherapy at clinic, home, or online — choose what works for you! We also operate 2 branch clinics: <strong className="text-white">DR. PAUL&apos;S ORTHO CLINIC</strong> and <strong className="text-white">Arunai Clinic</strong>.
+              A fully equipped center for effective physiotherapy treatments led by <strong className="text-white">Dr. A. Ashok kumar. (PT) MPT.(Neuro.), M.I.A.P.</strong> (Senior Physiotherapist, Reg No.: LA-39552). World-class physiotherapy at clinic, home, or online — choose what works for you! We also operate 2 branch clinics: <strong className="text-white">DR. PAUL&apos;S ORTHO CLINIC</strong> and <strong className="text-white">Arunai Clinic</strong>.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
               <a
                 href="https://activecarephysio.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary text-base font-bold !py-3.5 !px-7"
+                className="btn-primary text-base font-bold !py-3.5 !px-6"
                 id="hero-main-website"
               >
                 <Globe className="w-5 h-5" />
-                Visit Official Website
+                Visit Website
+              </a>
+              <a
+                href="https://g.page/r/CfexJGCWGVtmEBM/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#F59E0B]/20 hover:bg-[#F59E0B]/30 text-[#FCD34D] border border-[#F59E0B]/50 hover:border-[#F59E0B] font-bold text-sm sm:text-base transition-all duration-200 shadow-md hover:shadow-[#F59E0B]/20 hover:scale-[1.02]"
+                id="hero-google-review"
+              >
+                <Star className="w-5 h-5 fill-[#F59E0B] text-[#F59E0B]" />
+                Review Us on Google
               </a>
               <Link
                 href="/our-network"
-                className="btn-secondary text-base font-bold !py-3.5 !px-7"
+                className="btn-secondary text-base font-bold !py-3.5 !px-6"
                 id="hero-explore-network"
               >
-                Browse All 3 Clinics
+                All 3 Clinics
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -118,7 +132,7 @@ export default function HeroSection() {
                     </div>
                   </div>
                   <h3 className="font-bold text-sm text-white">Active Care Physiotherapy Centre</h3>
-                  <p className="text-xs text-slate-300">Led by Dr. Senthil Nathan · 15+ Years Experience · 5000+ Patients</p>
+                  <p className="text-xs text-slate-300">Led by Dr. A. Ashok kumar (PT, MPT-Neuro, M.I.A.P.) · Senior Physiotherapist</p>
                   <p className="text-xs text-slate-400 flex items-center gap-1"><Phone className="w-3 h-3 text-[#38BDF8]" /> +91 9884308186 / +91 88389 39754</p>
                 </div>
 
@@ -171,19 +185,27 @@ export default function HeroSection() {
             <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-white">15+</p>
             <p className="text-xs text-slate-400 font-bold font-[var(--font-body)]">Years of Experience</p>
           </div>
-          <div className="space-y-1">
+          <a
+            href="https://g.page/r/CfexJGCWGVtmEBM/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="space-y-1 block p-2 rounded-2xl hover:bg-[#112240] transition-all group border border-transparent hover:border-[#F59E0B]/30"
+            title="Leave a 5-Star Review on Google"
+          >
             <div className="flex items-center justify-center gap-1">
               <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#F59E0B]">5</p>
-              <Star className="w-6 h-6 text-[#F59E0B] fill-[#F59E0B]" />
+              <Star className="w-6 h-6 text-[#F59E0B] fill-[#F59E0B] group-hover:scale-110 transition-transform" />
             </div>
-            <p className="text-xs text-slate-400 font-bold font-[var(--font-body)]">Star Rated Physiotherapist</p>
-          </div>
+            <p className="text-xs text-slate-400 group-hover:text-[#FCD34D] font-bold font-[var(--font-body)] flex items-center justify-center gap-1">
+              Star Rated Physiotherapist <span className="underline decoration-dotted text-[0.65rem] text-[#F59E0B]">(Review Us)</span>
+            </p>
+          </a>
           <div className="space-y-1">
-            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#2DD4BF]">5,000+</p>
+            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#2DD4BF]">1 Lakh+</p>
             <p className="text-xs text-slate-400 font-bold font-[var(--font-body)]">Happy Patients Treated</p>
           </div>
           <div className="space-y-1">
-            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#38BDF8]">800+</p>
+            <p className="text-3xl sm:text-4xl font-extrabold font-[var(--font-heading)] text-[#38BDF8]">10,000+</p>
             <p className="text-xs text-slate-400 font-bold font-[var(--font-body)]">New Visits Every Year</p>
           </div>
         </div>
