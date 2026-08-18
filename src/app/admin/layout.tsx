@@ -7,6 +7,7 @@ import { AuthProvider, useAuth } from '@/lib/auth-context';
 import {
   LayoutDashboard,
   Stethoscope,
+  Clock,
   Globe,
   LogOut,
   ShieldAlert,
@@ -56,6 +57,7 @@ function AdminShell({ children }: { children: React.ReactNode }) {
 
   const navItems = [
     { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { label: 'Working Hours', href: '/admin/working-hours', icon: Clock },
     { label: 'Manage Services', href: '/admin/services', icon: Stethoscope },
     { label: 'Add New Service', href: '/admin/services/new', icon: PlusCircle },
   ];

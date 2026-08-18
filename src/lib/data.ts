@@ -1,26 +1,40 @@
 import { seedFacilities, seedServices, seedFacilityServices } from '@/lib/seed-data';
 import { getAdminServices } from '@/lib/firestore-services';
+import { getAdminFacilities, getAdminFacilityBySlug as fetchAdminFacilityBySlug } from '@/lib/firestore-facilities';
 import type { Facility, Service, FacilityWithServices } from '@/lib/types/database';
 
 export async function getFacilities(): Promise<Facility[]> {
-  return seedFacilities.map((f, i) => ({
-    ...f,
-    id: `facility-${i + 1}`,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-  }));
+  try {
+    return await getAdminFacilities();
+  } catch (error) {
+    console.warn('Fallback to seed facilities:', error);
+    return seedFacilities.map((f, i) => ({
+      ...f,
+      id: `facility-${i + 1}`,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }));
+  }
 }
 
 export async function getFacilityBySlug(slug: string): Promise<FacilityWithServices | null> {
-  const foundSeed = seedFacilities.find((f) => f.slug === slug);
-  if (!foundSeed) return null;
+  let facility: Facility | null = null;
+  try {
+    facility = await fetchAdminFacilityBySlug(slug);
+  } catch (err) {
+    console.warn('Fallback fetching facility slug:', err);
+  }
 
-  const facility: Facility = {
-    ...foundSeed,
-    id: `facility-${foundSeed.slug}`,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-  };
+  if (!facility) {
+    const foundSeed = seedFacilities.find((f) => f.slug === slug);
+    if (!foundSeed) return null;
+    facility = {
+      ...foundSeed,
+      id: `facility-${foundSeed.slug}`,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+  }
 
   const allServices = await getServices();
   const linkedServiceSlugs = seedFacilityServices

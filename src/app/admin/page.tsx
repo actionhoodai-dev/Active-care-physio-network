@@ -12,20 +12,29 @@ import {
   ArrowRight,
   Building2,
   CalendarCheck,
+  Clock,
+  ExternalLink,
 } from 'lucide-react';
+import { getAdminFacilities } from '@/lib/firestore-facilities';
+import type { Facility } from '@/lib/types/database';
 
 export default function AdminDashboardPage() {
   const { user, isConfigured } = useAuth();
   const [services, setServices] = useState<Service[]>([]);
+  const [facilities, setFacilities] = useState<Facility[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadData() {
       try {
-        const list = await getAdminServices();
-        setServices(list);
+        const [serviceList, facilityList] = await Promise.all([
+          getAdminServices(),
+          getAdminFacilities(),
+        ]);
+        setServices(serviceList);
+        setFacilities(facilityList);
       } catch (err) {
-        console.error('Error loading dashboard services:', err);
+        console.error('Error loading dashboard data:', err);
       } finally {
         setLoading(false);
       }
@@ -45,11 +54,18 @@ export default function AdminDashboardPage() {
             Welcome, Administrator
           </h1>
           <p className="text-sm text-slate-300 font-[var(--font-body)]">
-            Manage treatments and healthcare offerings for <strong className="text-white">Active Care Physiotherapy Centre</strong>.
+            Manage treatments, schedules, and clinic working hours for <strong className="text-white">Active Care Physiotherapy Centre</strong>.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-4">
+        <div className="flex flex-wrap items-stretch sm:items-center gap-3 mt-4">
+          <Link
+            href="/admin/working-hours"
+            className="flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 text-sm font-bold transition-all shadow-md active:scale-95"
+          >
+            <Clock className="w-4 h-4" />
+            <span>Edit Clinic Working Hours</span>
+          </Link>
           <Link
             href="/admin/services/new"
             className="flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-[#0284C7] hover:bg-[#0369A1] text-white text-sm font-bold transition-all shadow-md active:scale-95"
@@ -62,7 +78,7 @@ export default function AdminDashboardPage() {
             className="flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-[#112240] hover:bg-[#1A365D] text-slate-200 hover:text-white text-sm font-bold border border-[rgba(100,200,255,0.15)] transition-all active:scale-95"
           >
             <Stethoscope className="w-4 h-4" />
-            <span>Manage All Services</span>
+            <span>Manage Services</span>
           </Link>
         </div>
       </div>
@@ -179,6 +195,62 @@ export default function AdminDashboardPage() {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Clinic Working Hours Overview */}
+      <div className="bg-[#112240] rounded-2xl sm:rounded-3xl border border-[rgba(100,200,255,0.08)] p-4 sm:p-6 shadow-xl space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[rgba(100,200,255,0.08)] pb-4">
+          <div>
+            <h2 className="text-base sm:text-lg font-bold font-[var(--font-heading)] text-white flex items-center gap-2">
+              <Clock className="w-5 h-5 text-amber-400" />
+              Clinic Working Hours &amp; Schedules
+            </h2>
+            <p className="text-xs text-slate-400 mt-1">Configure opening times and flexible booking policies for each branch.</p>
+          </div>
+          <Link
+            href="/admin/working-hours"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs font-bold transition-all shadow-md active:scale-95 shrink-0"
+          >
+            <span>Manage All Hours</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {facilities.map((facility) => (
+            <div
+              key={facility.slug}
+              className="p-5 rounded-2xl bg-[#0A192F] border border-[rgba(100,200,255,0.08)] flex flex-col justify-between space-y-4"
+            >
+              <div className="space-y-2">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[0.65rem] font-bold uppercase tracking-wider text-[#38BDF8]">{facility.type}</span>
+                </div>
+                <h3 className="font-bold text-sm text-white">{facility.name}</h3>
+                <p className="text-xs text-slate-400">{facility.city}, {facility.state}</p>
+
+                <div className="pt-2 border-t border-[rgba(100,200,255,0.08)] space-y-1 text-xs">
+                  <div className="flex justify-between text-slate-300">
+                    <span className="font-medium text-slate-400">Mon–Sat:</span>
+                    <span className="font-semibold text-white">{facility.opening_hours?.monday || 'See schedule'}</span>
+                  </div>
+                  <div className="flex justify-between text-slate-300">
+                    <span className="font-medium text-slate-400">Sunday:</span>
+                    <span className="font-semibold text-amber-400">{facility.opening_hours?.sunday || 'Appointment only'}</span>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href={`/admin/working-hours?clinic=${facility.slug}`}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#112240] hover:bg-amber-500/20 text-amber-300 hover:text-amber-200 border border-amber-500/30 text-xs font-bold transition-all text-center"
+              >
+                <Clock className="w-3.5 h-3.5" />
+                <span>Edit {facility.name.split(' ')[0]} Hours</span>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
